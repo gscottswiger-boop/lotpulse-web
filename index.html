@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LotPulse — Turn browsers into buyers on your lot</title>
+<meta name="description" content="LotPulse puts a 'Watch this car' button on every vehicle. Shoppers get price-drop texts, you see real demand per VIN and capture the highest-intent leads in the building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1320; --ink-2:#1C2433; --slate:#566072;
+    --mute:#8A93A3; --line:#E6E9F0; --line-2:#EEF1F7;
+    --paper:#FFFFFF; --mist:#F5F8FF; --cloud:#F7F9FC;
+    --blue:#1F4FE0; --blue-deep:#1740B8; --blue-soft:#EAF1FF;
+    --amber:#F5A300; --green:#1E8E5A; --green-soft:#E7F5EC;
+    --radius:18px; --shadow:0 1px 2px rgba(14,19,32,.04),0 14px 40px rgba(31,79,224,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,.dsp{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .blue{color:var(--blue)}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2)}
+  .navin{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:20px}
+  .brand .mk{width:30px;height:30px;border-radius:9px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .brand em{font-style:normal;color:var(--blue)}
+  .navcta{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:600;font-size:14px;padding:10px 18px;border-radius:11px;box-shadow:0 4px 14px rgba(31,79,224,.28);transition:transform .12s,box-shadow .15s}
+  .navcta:hover{box-shadow:0 6px 20px rgba(31,79,224,.4)}
+  .navcta:active{transform:translateY(1px)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--mist),#fff 70%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:72px 0 80px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);background:var(--blue-soft);padding:6px 13px;border-radius:50px;margin-bottom:22px}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  h1{font-size:52px;font-weight:800;line-height:1.05;margin-bottom:20px}
+  .lede{font-size:19px;color:var(--slate);max-width:520px;margin-bottom:30px}
+  .herobtns{display:flex;gap:13px;align-items:center;flex-wrap:wrap}
+  .btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;padding:15px 26px;border-radius:13px;box-shadow:0 6px 20px rgba(31,79,224,.32);transition:transform .12s,box-shadow .15s;border:0;cursor:pointer;font-family:inherit}
+  .btn-primary:hover{background:var(--blue-deep);box-shadow:0 8px 26px rgba(31,79,224,.42)}
+  .btn-primary:active{transform:translateY(1px)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:7px;color:var(--ink);font-weight:600;font-size:15px;padding:15px 18px}
+  .btn-ghost:hover{color:var(--blue)}
+  .trust{margin-top:26px;display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--mute);font-weight:500}
+  .trust span{display:inline-flex;align-items:center;gap:6px}
+  .trust svg{color:var(--green)}
+
+  /* Hero widget mock */
+  .heromock{position:relative}
+  .wcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);max-width:380px;margin-left:auto}
+  .wc-photo{height:150px;background:linear-gradient(135deg,#2A3138,#3E4854);position:relative;display:flex;align-items:flex-end;padding:14px}
+  .wc-photo .tag{background:rgba(255,255,255,.92);border-radius:7px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--ink)}
+  .wc-hd{display:flex;align-items:center;gap:8px;padding:13px 16px;background:linear-gradient(180deg,#F5F8FF,#fff);border-bottom:1px solid var(--line-2)}
+  .wc-hd .sp{width:26px;height:26px;border-radius:8px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .wc-hd b{font-size:14px;display:block}.wc-hd span{font-size:11.5px;color:var(--slate)}
+  .wc-intel{display:flex;border-bottom:1px solid var(--line-2)}
+  .wc-cell{flex:1;text-align:center;padding:12px 8px}.wc-cell+.wc-cell{border-left:1px solid var(--line-2)}
+  .wc-cell .n{font-family:'Plus Jakarta Sans';font-weight:800;font-size:21px}.wc-cell .n.b{color:var(--blue)}
+  .wc-cell .l{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--slate);margin-top:4px}
+  .wc-tach{display:flex;align-items:center;gap:11px;padding:15px 16px 5px}
+  .wc-tach .segs{display:flex;gap:3px;flex:1}
+  .wc-tach .segs i{height:10px;flex:1;border-radius:3px;background:#EAEDF2;transform:scaleY(.6);animation:seg .4s ease both}
+  @keyframes seg{to{transform:scaleY(1)}}
+  .wc-tach .segs i.on{background:var(--amber)}.wc-tach .segs i.on.hi{background:var(--blue)}
+  .wc-tach .wn{font-family:'Plus Jakarta Sans';font-weight:800;font-size:22px;color:var(--blue)}
+  .wc-note{padding:0 16px;font-size:12.5px;color:var(--slate);font-weight:500}
+  .wc-btn{margin:13px 16px 7px;background:var(--blue);color:#fff;text-align:center;font-weight:700;padding:15px;border-radius:12px;font-size:15.5px;box-shadow:0 4px 14px rgba(31,79,224,.32)}
+  .wc-promise{display:flex;justify-content:center;gap:13px;padding:0 16px 15px;font-size:11.5px;color:#3A434D;font-weight:600}
+  .wc-promise span{display:inline-flex;align-items:center;gap:4px}.wc-promise svg{color:var(--green)}
+  .float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;box-shadow:0 8px 26px rgba(14,19,32,.12);font-size:13px;font-weight:600;display:flex;align-items:center;gap:9px}
+  .float.f1{top:-14px;left:-18px;animation:bob 4s ease-in-out infinite}
+  .float.f2{bottom:24px;left:-30px;animation:bob 4s ease-in-out infinite .8s}
+  .float .ic{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .float.f1 .ic{background:var(--green-soft);color:var(--green)}
+  .float.f2 .ic{background:var(--blue-soft);color:var(--blue)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* Section scaffold */
+  section{padding:84px 0}
+  .sec-eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;text-align:center}
+  .sec-title{font-size:38px;font-weight:800;text-align:center;line-height:1.12;margin-bottom:16px}
+  .sec-sub{font-size:18px;color:var(--slate);text-align:center;max-width:600px;margin:0 auto 52px}
+
+  /* Problem band */
+  .band{background:var(--ink);color:#fff}
+  .band .sec-title{color:#fff}
+  .band-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .band h2{font-size:36px;font-weight:800;line-height:1.12;margin-bottom:18px}
+  .band p{font-size:17px;color:#AEB6C6;margin-bottom:16px}
+  .band .pull{font-size:21px;color:#fff;font-weight:600;border-left:3px solid var(--blue);padding-left:18px;margin-top:24px;line-height:1.4}
+  .formcompare{background:var(--ink-2);border-radius:var(--radius);padding:26px;border:1px solid #2A3447}
+  .fc-row{display:flex;align-items:center;gap:13px;padding:13px 0;font-size:15px}
+  .fc-row+.fc-row{border-top:1px solid #2A3447}
+  .fc-x{width:26px;height:26px;border-radius:7px;background:#3A2226;color:#FF7A72;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .fc-ok{width:26px;height:26px;border-radius:7px;background:#16352A;color:#5BE49B;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .fc-old{color:#8A93A3}.fc-new{color:#fff;font-weight:600}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+  .step{position:relative;background:var(--cloud);border:1px solid var(--line-2);border-radius:var(--radius);padding:30px 26px}
+  .step .sn{font-family:'Plus Jakarta Sans';font-weight:800;font-size:14px;color:var(--blue);background:var(--blue-soft);width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .step h3{font-size:20px;font-weight:700;margin-bottom:9px}
+  .step p{font-size:15px;color:var(--slate)}
+
+  /* Benefits */
+  .bgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .bcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .14s,box-shadow .15s}
+  .bcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .bcard .ic{width:46px;height:46px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .bcard h3{font-size:19px;font-weight:700;margin-bottom:9px}
+  .bcard p{font-size:15px;color:var(--slate)}
+
+  /* Shopper band */
+  .shopper{background:linear-gradient(180deg,#fff,var(--mist))}
+  .shopper-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .shopper h2{font-size:34px;font-weight:800;line-height:1.14;margin-bottom:18px}
+  .shopper p{font-size:17px;color:var(--slate);margin-bottom:16px}
+  .chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px}
+  .chip svg{color:var(--green)}
+
+  /* CTA */
+  .cta{background:var(--blue);color:#fff;text-align:center;border-radius:24px;padding:64px 32px;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.14),transparent 60%)}
+  .cta h2{font-size:38px;font-weight:800;margin-bottom:14px;position:relative}
+  .cta p{font-size:18px;color:#D5E0FF;max-width:520px;margin:0 auto 30px;position:relative}
+  .cta .btn-primary{background:#fff;color:var(--blue);box-shadow:0 8px 30px rgba(0,0,0,.18);position:relative}
+  .cta .btn-primary:hover{background:#F0F4FF}
+
+  footer{padding:40px 0;border-top:1px solid var(--line-2);color:var(--mute);font-size:13px}
+  .footin{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:40px;padding:52px 0 60px}
+    h1{font-size:40px}.lede{font-size:17px}
+    .heromock{max-width:380px;margin:0 auto}
+    .band-grid,.shopper-grid{grid-template-columns:1fr;gap:32px}
+    .steps,.bgrid{grid-template-columns:1fr}
+    .sec-title{font-size:30px}.band h2,.shopper h2{font-size:28px}.cta h2{font-size:30px}
+    section{padding:60px 0}
+    .float{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap navin">
+    <div class="brand">
+      <span class="mk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 13 6 13 9 5 14 19 17 13 22 13"/></svg></span>
+      Lot<em>Pulse</em>
+    </div>
+    <a class="navcta" href="#demo" id="nav-demo">Book a demo</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Demand intelligence for car dealers</div>
+      <h1>Turn browsers into buyers — <span class="blue">right on your lot</span>.</h1>
+      <p class="lede">LotPulse puts a "Watch this car" button on every vehicle. Shoppers get a text when the price drops. You see exactly which cars real buyers want — and capture the highest-intent leads in the building.</p>
+      <div class="herobtns">
+        <a class="btn-primary" href="#demo">Book a demo
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="trust">
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Installs in minutes</span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Works on your current site</span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Feeds your CRM</span>
+      </div>
+    </div>
+
+    <div class="heromock">
+      <div class="float f1"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></span>Price dropped $500</div>
+      <div class="float f2"><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>9 people watching</div>
+      <div class="wcard">
+        <div class="wc-photo"><span class="tag">2026 RAM 1500 Laramie</span></div>
+        <div class="wc-hd"><span class="sp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 13 6 13 9 5 14 19 17 13 22 13"/></svg></span><div><b>Track this price</b><span>No haggling. No salesperson. Just a text.</span></div></div>
+        <div class="wc-intel">
+          <div class="wc-cell"><div class="n b">9</div><div class="l">Watching now</div></div>
+          <div class="wc-cell"><div class="n">4</div><div class="l">Days listed</div></div>
+        </div>
+        <div class="wc-tach">
+          <div class="segs" id="heroSegs"></div>
+          <div class="wn">9</div>
+        </div>
+        <div class="wc-note">Get a text the moment the price drops.</div>
+        <div class="wc-btn">👁 Watch this car</div>
+        <div class="wc-promise">
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No calls</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No spam</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Problem -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <h2>Your leads die at the form.</h2>
+      <p>Every "request a quote" button means the same thing to a shopper: a salesperson is about to call me. So they don't fill it out. They leave, and you never knew they were interested.</p>
+      <p>The shoppers who want your cars the most are browsing silently — and walking.</p>
+      <div class="pull">LotPulse gives them a reason to raise their hand: a price-drop text, with zero pressure.</div>
+    </div>
+    <div class="formcompare">
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">"Get a quote" → a rep calls you</span></div>
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">Pop-ups everyone closes</span></div>
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">No idea who's actually interested</span></div>
+      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">"Watch this car" → a text when it drops</span></div>
+      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">Real demand, per VIN, on a live board</span></div>
+      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">The hottest leads, straight to your CRM</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-eyebrow">How it works</div>
+    <h2 class="sec-title">One button. A whole demand engine.</h2>
+    <p class="sec-sub">It installs on your current website in minutes — no new platform, no rebuild.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="sn">1</div>
+        <h3>Shoppers tap Watch</h3>
+        <p>On any vehicle, a shopper taps "Watch this car" and drops their number. No form, no callback dread — it feels like watching an item online.</p>
+      </div>
+      <div class="step">
+        <div class="sn">2</div>
+        <h3>You see real demand</h3>
+        <p>Your dashboard ranks every car by how many real buyers are watching it. Aging units with zero interest surface instantly as the ones to move.</p>
+      </div>
+      <div class="step">
+        <div class="sn">3</div>
+        <h3>A price move notifies everyone</h3>
+        <p>Drop a price and every watcher gets a text the same minute. Watch demand turn into showroom visits — and the leads flow to your CRM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="sec-eyebrow">What you get</div>
+    <h2 class="sec-title">Demand you can finally see — and act on.</h2>
+    <p class="sec-sub">Built for the way dealers actually work, by people who run dealer ad accounts.</p>
+    <div class="bgrid">
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Demand board, per VIN</h3>
+        <p>See exactly which vehicles real buyers are watching, ranked live. Know your hot units and your problem units at a glance.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>The highest-intent leads</h3>
+        <p>A watcher is a buyer who raised their hand on a specific car. They flow to your CRM scored hot, warm, or cool — so your BDC calls the right ten, not all two hundred.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14"/></svg></div>
+        <h3>Move metal faster</h3>
+        <p>Aging unit with no demand? That's your reprice. Drop the price and notify every watcher at once — turn a stale listing into a sold one.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <h3>Feeds your ad accounts</h3>
+        <p>Every watch is a first-party, high-intent signal — piped into Google and Meta to sharpen your campaigns in a world without cookies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Shopper angle -->
+<section class="shopper">
+  <div class="wrap shopper-grid">
+    <div>
+      <div class="sec-eyebrow" style="text-align:left">For your shoppers</div>
+      <h2>The Carvana experience — on your website.</h2>
+      <p>Today's buyers expect to shop on their own terms. LotPulse gives them a modern, no-pressure way to stay close to the car they want, without handing themselves to a salesperson.</p>
+      <p>It builds trust with the shopper and keeps them on <em>your</em> site instead of drifting to a third-party marketplace.</p>
+      <div class="chiprow">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No salesperson calls</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Price-drop alerts</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel anytime</span>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-size:120px;line-height:1;font-family:'Plus Jakarta Sans';font-weight:800;color:var(--blue)">98%</div>
+      <p style="color:var(--slate);font-size:16px;max-width:300px;margin:8px auto 0">of your traffic leaves without ever telling you they were interested. LotPulse changes that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="demo">
+  <div class="wrap">
+    <div class="cta">
+      <h2>See it on your own inventory.</h2>
+      <p>Book a 15-minute demo and we'll show you live demand on cars you recognize. Founding-dealer spots are limited.</p>
+      <a class="btn-primary" id="demo-btn" href="#">Book a demo
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footin">
+    <div class="brand" style="font-size:17px"><span class="mk" style="width:26px;height:26px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 13 6 13 9 5 14 19 17 13 22 13"/></svg></span>Lot<em>Pulse</em></div>
+    <div>© 2026 LotPulse · Demand intelligence for car dealers</div>
+  </div>
+</footer>
+
+<script>
+  // ── Booking link: paste your scheduler URL here (Calendly, Cal.com, etc.) ──
+  // If left blank, the buttons fall back to an email.
+  var BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1oxBYPRA-C0pK6UeYf6NoVkBrMmpQLqhlsX4L1orPtAR9FTLStsTAhken_7xgZrzn4wtk-Oacz";
+  var BOOKING_EMAIL = "scott@lotpulse.io";
+
+  (function(){
+    var target = BOOKING_URL || ("mailto:" + BOOKING_EMAIL + "?subject=LotPulse%20Demo%20Request&body=I%27d%20like%20to%20see%20LotPulse%20on%20my%20inventory.");
+    ["nav-demo","demo-btn"].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el){ el.setAttribute("href", target); if(BOOKING_URL){ el.setAttribute("target","_blank"); el.setAttribute("rel","noopener"); } }
+    });
+    // Hero tachometer fill
+    var segs=document.getElementById("heroSegs");
+    if(segs){ for(var i=0;i<14;i++){ var on=i<9; var hi=i>=5&&i<9; var c=on?(hi?"on hi":"on"):""; segs.innerHTML+='<i class="'+c+'" style="animation-delay:'+(i*40)+'ms"></i>'; } }
+  })();
+</script>
+</body>
+</html>
