@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMS Opt-In Flow — LotPulse</title>
+<meta name="description" content="A live demonstration of how shoppers consent to receive LotPulse text alerts.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Vehicle",
+  "name": "2026 RAM 1500 Laramie Crew Cab",
+  "vehicleIdentificationNumber": "3C6SRFJP2T4183343"
+}
+</script>
+<style>
+  :root{--ink:#0E1320;--slate:#566072;--mute:#8A93A3;--line:#E6E9F0;--blue:#1F4FE0;--mist:#F5F8FF;--green:#1E8E5A;--green-soft:#E7F5EC;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;background:#fff}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  a{color:var(--blue)}
+  nav{border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+  .brand .mk{width:30px;height:30px;border-radius:9px;background:var(--ink);display:flex;align-items:center;justify-content:center}
+  .brand em{font-style:normal;color:var(--blue)}
+  header.hd{background:linear-gradient(180deg,var(--mist),#fff);padding:44px 0 32px;border-bottom:1px solid var(--line)}
+  h1{font-family:'Plus Jakarta Sans';font-weight:800;font-size:30px;letter-spacing:-.02em;margin-bottom:10px}
+  .lede{color:var(--slate);font-size:16px;max-width:560px}
+  .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:var(--green);font-weight:600;font-size:13px;padding:6px 13px;border-radius:50px;margin-bottom:16px}
+  .badge i{width:7px;height:7px;border-radius:50%;background:var(--green)}
+  main{padding:36px 0 70px}
+  h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;margin:30px 0 10px}
+  p{margin-bottom:12px;color:#2A323A;font-size:15px}
+  ol{margin:0 0 14px 22px}li{margin-bottom:8px;color:#2A323A;font-size:15px}
+  .demoBox{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:28px;margin:24px 0;display:flex;justify-content:center}
+  .demoNote{font-size:12.5px;color:var(--mute);text-align:center;margin-top:10px}
+  .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .links a{font-weight:600;font-size:14px}
+  footer{border-top:1px solid var(--line);padding:24px 0;color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin">
+  <a class="brand" href="/"><span class="mk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 13 6 13 9 5 14 19 17 13 22 13"/></svg></span><span>Lot<em>Pulse</em></span></a>
+</div></nav>
+
+<header class="hd"><div class="wrap">
+  <div class="badge"><i></i>Live, functioning widget — not a mockup</div>
+  <h1>How shoppers opt in to LotPulse text alerts</h1>
+  <p class="lede">This page shows the exact "Watch this car" widget as it appears on a participating dealership's vehicle page, calling our live API. Use it to verify the opt-in flow and consent language for SMS campaign review.</p>
+</div></header>
+
+<main><div class="wrap">
+
+  <h2>The opt-in flow, step by step</h2>
+  <ol>
+    <li>A shopper browsing a dealer's vehicle detail page sees the widget below and taps <strong>"Watch this car."</strong></li>
+    <li>A bottom sheet opens asking for their mobile number, with the consent disclosure shown directly above the submit button (visible below).</li>
+    <li>Tapping <strong>"Start watching"</strong> submits the opt-in. The shopper immediately receives a confirmation text.</li>
+    <li>Going forward, that shopper receives a text only if the vehicle's price drops or it sells.</li>
+    <li>Every message includes opt-out instructions. Replying <strong>STOP</strong> unsubscribes immediately; <strong>HELP</strong> returns support contact info.</li>
+  </ol>
+
+  <h2>Try it yourself</h2>
+  <p>This is the production widget, pulling live data for a real vehicle. Tap the button below to see the exact consent screen a shopper sees.</p>
+
+  <div class="demoBox" id="widgetMount"></div>
+  <div class="demoNote">Demo vehicle: 2026 RAM 1500 Laramie, a real listing at a participating dealership. This widget calls LotPulse's live API — submitting a real phone number will enroll it in real alerts for this vehicle.</div>
+
+  <h2>Required disclosures</h2>
+  <p>The consent screen explicitly states:</p>
+  <ol>
+    <li>That the shopper is consenting to receive automated text messages about the specific vehicle</li>
+    <li>That consent is <strong>not a condition of purchase</strong></li>
+    <li>That <strong>message and data rates may apply</strong></li>
+    <li>That they can reply <strong>STOP</strong> to cancel at any time</li>
+  </ol>
+
+  <h2>Policies</h2>
+  <div class="links">
+    <a href="/privacy.html">Privacy Policy →</a>
+    <a href="/terms.html">SMS Terms &amp; Conditions →</a>
+  </div>
+
+</div></main>
+
+<footer><div class="wrap">© 2026 LotPulse, operated by Scott Swiger</div></footer>
+
+<script>
+  window.__lotpulseConfig = {
+    apiBase: "https://lotpulse-q249.onrender.com",
+    publicKey: "8e85ffebcf92f4d24ae834f1",
+    // This static page has no dealer price-box to anchor near, so mount the
+    // widget directly inside the demo container instead.
+    anchorSelector: "#widgetMount",
+    anchorPosition: "append"
+  };
+</script>
+<script src="https://lotpulse-site.onrender.com/lotpulse-widget.js"></script>
+</body>
+</html>
