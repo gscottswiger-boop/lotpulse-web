@@ -21,12 +21,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Vehicle",
-  "name": "2026 RAM 1500 Laramie Crew Cab",
-  "vehicleIdentificationNumber": "3C6SRFJP2T4183343"
+  "name": "2026 RAM 1500 Big Horn Crew Cab 4x2",
+  "vehicleIdentificationNumber": "3C6RREFG2T4211014"
 }
 </script>
 <style>
-  :root{--ink:#0E1320;--slate:#566072;--mute:#8A93A3;--line:#E6E9F0;--blue:#1F4FE0;--mist:#F5F8FF;--green:#1E8E5A;--green-soft:#E7F5EC;}
+  :root{--ink:#0E1320;--slate:#566072;--mute:#8A93A3;--line:#E6E9F0;--blue:#1F4FE0;--mist:#F5F8FF;--green:#1E8E5A;--green-soft:#E7F5EC;--amber:#B45309;--amber-soft:#FEF3C7;}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;background:#fff}
   .wrap{max-width:760px;margin:0 auto;padding:0 24px}
@@ -38,18 +38,33 @@
   .brand em{font-style:normal;color:var(--blue)}
   header.hd{background:linear-gradient(180deg,var(--mist),#fff);padding:44px 0 32px;border-bottom:1px solid var(--line)}
   h1{font-family:'Plus Jakarta Sans';font-weight:800;font-size:30px;letter-spacing:-.02em;margin-bottom:10px}
-  .lede{color:var(--slate);font-size:16px;max-width:560px}
+  .lede{color:var(--slate);font-size:16px;max-width:580px}
   .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:var(--green);font-weight:600;font-size:13px;padding:6px 13px;border-radius:50px;margin-bottom:16px}
   .badge i{width:7px;height:7px;border-radius:50%;background:var(--green)}
   main{padding:36px 0 70px}
-  h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;margin:30px 0 10px}
+  h2{font-family:'Plus Jakarta Sans';font-weight:700;font-size:18px;margin:34px 0 10px}
+  h2:first-of-type{margin-top:0}
   p{margin-bottom:12px;color:#2A323A;font-size:15px}
-  ol{margin:0 0 14px 22px}li{margin-bottom:8px;color:#2A323A;font-size:15px}
+  ol{margin:0 0 14px 22px}
+  li{margin-bottom:10px;color:#2A323A;font-size:15px;line-height:1.6}
   .demoBox{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:28px;margin:24px 0;display:flex;justify-content:center}
   .demoNote{font-size:12.5px;color:var(--mute);text-align:center;margin-top:10px}
   .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
   .links a{font-weight:600;font-size:14px}
   footer{border-top:1px solid var(--line);padding:24px 0;color:var(--mute);font-size:13px}
+
+  /* Consent language display box */
+  .consent-box{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:20px 22px;margin:14px 0}
+  .consent-box .label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+  .consent-box .checkbox-row{display:flex;align-items:flex-start;gap:12px}
+  .consent-box .cbx-vis{width:22px;height:22px;flex-shrink:0;border:2.5px solid #8A93A3;border-radius:5px;margin-top:2px}
+  .consent-box .consent-text{font-size:13.5px;color:#2A323A;line-height:1.55}
+  .consent-box .fine-text{font-size:12px;color:var(--slate);margin-top:6px;padding-left:34px}
+  .consent-box .optional-tag{display:inline-block;font-size:11px;font-weight:600;color:var(--blue);background:var(--mist);border:1px solid #C7D4F8;border-radius:4px;padding:1px 7px;margin-bottom:4px;letter-spacing:.02em}
+
+  /* Key callout */
+  .callout{background:var(--amber-soft);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:12px 16px;margin:16px 0;font-size:14px;color:#78350F}
+  .callout strong{display:block;margin-bottom:2px}
 </style>
 </head>
 <body>
@@ -60,34 +75,52 @@
 <header class="hd"><div class="wrap">
   <div class="badge"><i></i>Live, functioning widget — not a mockup</div>
   <h1>How shoppers opt in to LotPulse text alerts</h1>
-  <p class="lede">This page shows the exact "Watch this car" widget as it appears on a participating dealership's vehicle page, calling our live API. Use it to verify the opt-in flow and consent language for SMS campaign review.</p>
+  <p class="lede">This page shows the exact "Watch this car" widget as it appears on a participating dealership's vehicle detail page, calling the live LotPulse API. Use it to verify the opt-in flow, consent language, and checkbox behavior for SMS campaign review.</p>
 </div></header>
 
 <main><div class="wrap">
 
   <h2>The opt-in flow, step by step</h2>
   <ol>
-    <li>A shopper browsing a dealer's vehicle detail page sees the widget below and taps <strong>"Watch this car."</strong></li>
-    <li>A bottom sheet opens asking for their mobile number, with the consent disclosure shown directly above the submit button (visible below).</li>
-    <li>Tapping <strong>"Start watching"</strong> submits the opt-in. The shopper immediately receives a confirmation text.</li>
-    <li>Going forward, that shopper receives a text only if the vehicle's price drops or it sells.</li>
-    <li>Every message includes opt-out instructions. Replying <strong>STOP</strong> unsubscribes immediately; <strong>HELP</strong> returns support contact info.</li>
+    <li>A shopper browsing a vehicle detail page sees the <strong>"Watch this car"</strong> widget and taps the main button.</li>
+    <li>A bottom sheet slides up with a field for their mobile number (and an optional first-name field).</li>
+    <li>Below the phone field is an <strong>optional, unchecked-by-default</strong> SMS consent checkbox. The exact disclosure text shown to the shopper reads:<br><br>
+      <div class="consent-box">
+        <div class="label">Consent checkbox — as it appears in the widget</div>
+        <div class="optional-tag">OPTIONAL</div>
+        <div class="checkbox-row">
+          <div class="cbx-vis"></div>
+          <div class="consent-text">Also text me when the price drops. I agree to receive automated marketing text messages about this vehicle from this dealer at the number above. Consent is not a condition of purchase.</div>
+        </div>
+        <div class="fine-text">Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help.</div>
+      </div>
+    </li>
+    <li>
+      <strong>The "Start watching" submit button is never disabled by the checkbox.</strong> It requires only a valid US phone number. Checking the box is not required to submit — this is by design, to avoid forced-consent (error 30923).
+      <div class="callout" style="margin-top:10px"><strong>Two separate outcomes depending on checkbox state:</strong>
+        If the box is <strong>checked</strong>: a demand-signal watch is created AND the shopper is enrolled for SMS alerts. They receive a confirmation text immediately after submitting.<br><br>
+        If the box is <strong>unchecked</strong>: the watch is still created as a demand signal for the dealer. No texts are ever sent to this shopper unless they return and opt in separately on a future visit.
+      </div>
+    </li>
+    <li>Every outbound text message ends with opt-out instructions. Replying <strong>STOP</strong> immediately unsubscribes; replying <strong>HELP</strong> returns support contact info (scott@lotpulse.io).</li>
   </ol>
 
   <h2>Try it yourself</h2>
-  <p>This is the production widget, pulling live data for a real vehicle. Tap the button below to see the exact consent screen a shopper sees.</p>
+  <p>This is the production widget, connected to the live LotPulse API and a real vehicle listing at Big O Dodge CJDR. Tap the button below to see the exact consent screen a shopper sees — including the optional checkbox and full disclosure text.</p>
 
   <div class="demoBox" id="widgetMount"></div>
-  <div class="demoNote">Demo vehicle: 2026 RAM 1500 Laramie, a real listing at a participating dealership. This widget calls LotPulse's live API — submitting a real phone number will enroll it in real alerts for this vehicle.</div>
+  <div class="demoNote">Demo vehicle: 2026 RAM 1500 Big Horn Crew Cab 4x2 · VIN 3C6RREFG2T4211014 · Big O Dodge CJDR, a participating dealership. Submitting a real phone number will enroll it in live alerts for this vehicle.</div>
 
   <h2>Required disclosures</h2>
-  <p>The consent screen explicitly states:</p>
+  <p>The consent checkbox explicitly states:</p>
   <ol>
-    <li>That the shopper is consenting to receive automated text messages about the specific vehicle</li>
+    <li>That the shopper is consenting to receive <strong>automated marketing text messages</strong> about the specific vehicle</li>
     <li>That consent is <strong>not a condition of purchase</strong></li>
     <li>That <strong>message and data rates may apply</strong></li>
     <li>That they can reply <strong>STOP</strong> to cancel at any time</li>
+    <li>That they can reply <strong>HELP</strong> for help</li>
   </ol>
+  <p>The checkbox is <strong>unchecked by default</strong> and checking it is <strong>never required</strong> to use the "Watch this car" feature.</p>
 
   <h2>Policies</h2>
   <div class="links">
