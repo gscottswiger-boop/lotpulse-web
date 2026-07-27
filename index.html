@@ -157,6 +157,58 @@
     section{padding:60px 0}
     .float{display:none}
   }
+
+  /* ── Trial offer modal ─────────────────────────────────────────────────── */
+  .lp-scrim{position:fixed;inset:0;background:rgba(14,19,32,.55);backdrop-filter:blur(3px);
+    opacity:0;pointer-events:none;transition:opacity .25s;z-index:900}
+  .lp-scrim.open{opacity:1;pointer-events:auto}
+  .lp-modal{position:fixed;z-index:901;left:50%;top:50%;
+    transform:translate(-50%,-46%) scale(.97);opacity:0;pointer-events:none;
+    width:min(520px,calc(100vw - 32px));max-height:90vh;overflow:auto;
+    background:#fff;border-radius:20px;box-shadow:0 24px 70px rgba(14,19,32,.3);
+    transition:opacity .25s,transform .25s cubic-bezier(.32,.72,.2,1)}
+  .lp-modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+  .lp-head{background:linear-gradient(135deg,var(--blue),var(--blue-deep));color:#fff;
+    padding:26px 28px 22px;border-radius:20px 20px 0 0;position:relative}
+  .lp-badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);
+    font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:5px 11px;border-radius:50px;margin-bottom:12px}
+  .lp-head h3{font-family:'Plus Jakarta Sans';font-size:25px;font-weight:800;line-height:1.15;margin-bottom:7px}
+  .lp-head p{font-size:14.5px;color:#D8E3FF;line-height:1.5}
+  .lp-x{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;border-radius:50%;
+    background:rgba(255,255,255,.18);color:#fff;font-size:19px;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:background .15s}
+  .lp-x:hover{background:rgba(255,255,255,.34)}
+  .lp-body{padding:22px 28px 26px}
+  .lp-row{margin-bottom:13px}
+  .lp-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lp-row label{display:block;font-size:12px;font-weight:600;color:var(--slate);
+    letter-spacing:.03em;text-transform:uppercase;margin-bottom:5px}
+  .lp-row input,.lp-row select,.lp-row textarea{width:100%;font-family:inherit;font-size:15px;
+    color:var(--ink);background:var(--cloud);border:1.5px solid var(--line);border-radius:10px;
+    padding:11px 13px;outline:none;transition:border-color .15s}
+  .lp-row input:focus,.lp-row select:focus,.lp-row textarea:focus{border-color:var(--blue)}
+  .lp-row textarea{resize:vertical;min-height:66px}
+  .lp-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;
+    opacity:0!important;pointer-events:none!important}
+  .lp-submit{width:100%;border:0;cursor:pointer;background:var(--blue);color:#fff;
+    font-family:inherit;font-weight:700;font-size:16px;padding:15px;border-radius:12px;
+    box-shadow:0 6px 20px rgba(31,79,224,.32);transition:background .15s;margin-top:4px}
+  .lp-submit:hover{background:var(--blue-deep)}
+  .lp-submit:disabled{background:#B9C7EC;cursor:default;box-shadow:none}
+  .lp-fine{font-size:11.5px;color:var(--mute);text-align:center;margin-top:11px;line-height:1.5}
+  .lp-err{display:none;background:#FDEAE9;color:#9A2E29;font-size:13.5px;font-weight:600;
+    border-radius:9px;padding:10px 13px;margin-bottom:13px}
+  .lp-done{display:none;text-align:center;padding:14px 4px 6px}
+  .lp-done .tick{width:56px;height:56px;border-radius:50%;background:var(--green-soft);color:var(--green);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .lp-done h4{font-family:'Plus Jakarta Sans';font-size:21px;font-weight:800;margin-bottom:8px}
+  .lp-done p{font-size:15px;color:var(--slate)}
+  @media (max-width:520px){
+    .lp-row2{grid-template-columns:1fr}
+    .lp-head{padding:22px 20px 18px}.lp-body{padding:20px}
+    .lp-head h3{font-size:22px}
+  }
 </style>
 </head>
 <body>
@@ -228,7 +280,7 @@
     </div>
     <div class="formcompare">
       <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">"Get a quote" → a rep calls you</span></div>
-      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">Pop-ups everyone closes</span></div>
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">Third-party leads sold to your competitors</span></div>
       <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">No idea who's actually interested</span></div>
       <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">"Watch this car" → a text when it drops</span></div>
       <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">Real demand, per VIN, on a live board</span></div>
@@ -351,6 +403,180 @@
     var segs=document.getElementById("heroSegs");
     if(segs){ for(var i=0;i<14;i++){ var on=i<9; var hi=i>=5&&i<9; var c=on?(hi?"on hi":"on"):""; segs.innerHTML+='<i class="'+c+'" style="animation-delay:'+(i*40)+'ms"></i>'; } }
   })();
+</script>
+
+<!-- Trial offer modal -->
+<div class="lp-scrim" id="lpScrim"></div>
+<div class="lp-modal" id="lpModal" role="dialog" aria-modal="true" aria-labelledby="lpTitle">
+  <div class="lp-head">
+    <button class="lp-x" id="lpClose" aria-label="Close">&times;</button>
+    <div class="lp-badge">30 days free</div>
+    <h3 id="lpTitle">Try LotPulse on your own inventory.</h3>
+    <p>Run it free for 30 days on your real lot. No contract, no setup fee &mdash; cancel any time.</p>
+  </div>
+  <div class="lp-body">
+    <form id="lpForm" novalidate>
+      <div class="lp-err" id="lpErr"></div>
+
+      <!-- honeypot: hidden from humans, irresistible to bots -->
+      <div class="lp-hp" aria-hidden="true">
+        <label>Company website</label>
+        <input type="text" name="company_website" id="lp-hp" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="lp-row2">
+        <div class="lp-row">
+          <label for="lp-name">Your name</label>
+          <input type="text" id="lp-name" autocomplete="name" required>
+        </div>
+        <div class="lp-row">
+          <label for="lp-dealer">Dealership</label>
+          <input type="text" id="lp-dealer" autocomplete="organization" required>
+        </div>
+      </div>
+      <div class="lp-row2">
+        <div class="lp-row">
+          <label for="lp-email">Email</label>
+          <input type="email" id="lp-email" autocomplete="email" required>
+        </div>
+        <div class="lp-row">
+          <label for="lp-phone">Phone <span style="font-weight:400;text-transform:none">(optional)</span></label>
+          <input type="tel" id="lp-phone" autocomplete="tel">
+        </div>
+      </div>
+      <div class="lp-row">
+        <label for="lp-rooftops">How many rooftops?</label>
+        <select id="lp-rooftops">
+          <option value="1">1 rooftop</option>
+          <option value="2-5">2&ndash;5 rooftops</option>
+          <option value="6-20">6&ndash;20 rooftops</option>
+          <option value="20+">20+ rooftops</option>
+          <option value="agency">I'm an agency</option>
+        </select>
+      </div>
+      <div class="lp-row">
+        <label for="lp-notes">Anything we should know? <span style="font-weight:400;text-transform:none">(optional)</span></label>
+        <textarea id="lp-notes" rows="2"></textarea>
+      </div>
+      <button type="submit" class="lp-submit" id="lpSubmit">Start my 30 days free</button>
+      <div class="lp-fine">We'll reply from a real person, usually same day. No spam, and we never share your details.</div>
+    </form>
+
+    <div class="lp-done" id="lpDone">
+      <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <h4>Got it &mdash; talk soon.</h4>
+      <p>We'll be in touch shortly to get your 30 days started on your own inventory.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var API = "https://lotpulse-q249.onrender.com";
+  var KEY = "lp_trial_modal";           // localStorage key
+  var SUPPRESS_DAYS = 30;               // how long a dismissal sticks
+  var DELAY_MS = 25000;                 // fallback trigger on touch devices
+
+  var scrim = document.getElementById("lpScrim");
+  var modal = document.getElementById("lpModal");
+  var form  = document.getElementById("lpForm");
+  var done  = document.getElementById("lpDone");
+  var err   = document.getElementById("lpErr");
+  var btn   = document.getElementById("lpSubmit");
+  var shown = false;
+
+  function suppressed(){
+    try{
+      var v = localStorage.getItem(KEY);
+      if(!v) return false;
+      if(v === "submitted") return true;           // never nag a converted visitor
+      return (Date.now() - parseInt(v,10)) < SUPPRESS_DAYS*86400000;
+    }catch(e){ return false; }
+  }
+  function remember(val){ try{ localStorage.setItem(KEY, val); }catch(e){} }
+
+  function open(){
+    if(shown || suppressed()) return;
+    shown = true;
+    scrim.classList.add("open"); modal.classList.add("open");
+    setTimeout(function(){ var n=document.getElementById("lp-name"); if(n) n.focus(); }, 280);
+  }
+  function close(){
+    scrim.classList.remove("open"); modal.classList.remove("open");
+    if(localStorage.getItem(KEY) !== "submitted") remember(String(Date.now()));
+  }
+
+  document.getElementById("lpClose").addEventListener("click", close);
+  scrim.addEventListener("click", close);
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") close(); });
+
+  // Any "Book a demo" button opens this instead of leaving the page.
+  ["nav-demo","demo-btn"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener("click", function(e){
+      e.preventDefault();
+      shown = false;                 // an explicit click always opens it
+      try{ localStorage.removeItem(KEY); }catch(err2){}
+      open();
+    });
+  });
+
+  // Desktop: exit intent. Touch devices have no mouseleave, so use a timer.
+  var isTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
+  if(isTouch){
+    setTimeout(open, DELAY_MS);
+  } else {
+    document.addEventListener("mouseout", function(e){
+      if(!e.relatedTarget && e.clientY <= 0) open();
+    });
+    setTimeout(open, 60000);         // long backstop if they never exit-intent
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    err.style.display = "none";
+
+    var payload = {
+      company_website: document.getElementById("lp-hp").value,   // honeypot
+      name:       document.getElementById("lp-name").value.trim(),
+      dealership: document.getElementById("lp-dealer").value.trim(),
+      email:      document.getElementById("lp-email").value.trim(),
+      phone:      document.getElementById("lp-phone").value.trim(),
+      rooftops:   document.getElementById("lp-rooftops").value,
+      notes:      document.getElementById("lp-notes").value.trim()
+    };
+
+    if(!payload.name || !payload.dealership || !payload.email){
+      err.textContent = "Name, dealership and email are required.";
+      err.style.display = "block"; return;
+    }
+    if(!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(payload.email)){
+      err.textContent = "That email address doesn't look right.";
+      err.style.display = "block"; return;
+    }
+
+    btn.disabled = true; btn.textContent = "Sending\u2026";
+    fetch(API + "/v1/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if(res && res.ok){
+        remember("submitted");
+        form.style.display = "none";
+        done.style.display = "block";
+      } else {
+        err.textContent = (res && res.error) || "Something went wrong. Please try again.";
+        err.style.display = "block";
+        btn.disabled = false; btn.textContent = "Start my 30 days free";
+      }
+    }).catch(function(){
+      err.textContent = "Couldn't reach us just now \u2014 please email scott@lotpulse.io.";
+      err.style.display = "block";
+      btn.disabled = false; btn.textContent = "Start my 30 days free";
+    });
+  });
+})();
 </script>
 </body>
 </html>
