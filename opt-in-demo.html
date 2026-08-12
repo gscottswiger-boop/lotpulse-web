@@ -81,7 +81,8 @@
 <header class="hd"><div class="wrap">
   <div class="badge"><i></i>Live, functioning widget — not a mockup</div>
   <h1>How shoppers opt in to LotPulse text alerts</h1>
-  <p class="lede">This page shows the exact "Watch this car" widget as it appears on a participating dealership's vehicle detail page, calling the live LotPulse API. Use it to verify the opt-in flow, consent language, and checkbox behavior for SMS campaign review.</p>
+  <p class="lede">This page shows the exact "Watch this car" widget as it appears on a participating dealership's vehicle detail page, calling the live LotPulse API. LotPulse is operated by AI Business Solutions LLC d/b/a LotPulse. Use it to verify the opt-in flow, consent language, and checkbox behavior for SMS campaign review.</p>
+  <p class="lede" style="margin-top:10px;font-size:14px;color:var(--mute)">Last updated: August 2026</p>
 </div></header>
 
 <main><div class="wrap">
@@ -96,7 +97,7 @@
         <div class="optional-tag">OPTIONAL</div>
         <div class="checkbox-row">
           <div class="cbx-vis"></div>
-          <div class="consent-text">Also text me when the price drops. I agree to receive automated marketing text messages about this vehicle from this dealer at the number above. Consent is not a condition of purchase.</div>
+          <div class="consent-text">Also text me when the price drops on this vehicle, and when similar vehicles (same make and model) arrive. I agree to receive automated marketing text messages about this vehicle and similar inventory from this dealer at the number above. Consent is not a condition of purchase.</div>
         </div>
         <div class="fine-text">Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to opt out, HELP for help.</div>
       </div>
@@ -120,13 +121,23 @@
   <h2>Required disclosures</h2>
   <p>The consent checkbox explicitly states:</p>
   <ol>
-    <li>That the shopper is consenting to receive <strong>automated marketing text messages</strong> about the specific vehicle</li>
+    <li>That the shopper is consenting to receive <strong>automated marketing text messages</strong> about the specific vehicle, and about <strong>similar vehicles (same make and model)</strong> arriving at that dealership</li>
     <li>That consent is <strong>not a condition of purchase</strong></li>
     <li>That <strong>message and data rates may apply</strong></li>
     <li>That they can reply <strong>STOP</strong> to cancel at any time</li>
     <li>That they can reply <strong>HELP</strong> for help</li>
   </ol>
   <p>The checkbox is <strong>unchecked by default</strong> and checking it is <strong>never required</strong> to use the "Watch this car" feature.</p>
+
+  <h2>Message types and frequency</h2>
+  <p>A shopper who checks the consent box may receive: a sign-up confirmation, price-drop alerts, demand updates, a sold notice, and notices when a similar vehicle arrives. Frequency is driven entirely by activity on the vehicle the shopper selected, and arrival notices carry hard limits:</p>
+  <ol>
+    <li>At most <strong>one similar-vehicle arrival notice in any 48-hour period</strong>, per shopper</li>
+    <li>Never more than one notice about the same arriving vehicle</li>
+    <li>Arrival notices <strong>stop 60 days after a watched vehicle sells</strong>, and 90 days after a watch begins</li>
+    <li>A "similar" vehicle means the <strong>same condition, make and model</strong>, within $5,000 of the watched vehicle's price</li>
+  </ol>
+  <p><strong>Message and data rates may apply.</strong> Replying STOP ends all messages immediately.</p>
 
   <h2>Policies</h2>
   <div class="links">
@@ -136,7 +147,7 @@
 
 </div></main>
 
-<footer><div class="wrap">© 2026 LotPulse, operated by Scott Swiger</div></footer>
+<footer><div class="wrap">© 2026 AI Business Solutions LLC d/b/a LotPulse</div></footer>
 
 <script>
   window.__lotpulseConfig = {
