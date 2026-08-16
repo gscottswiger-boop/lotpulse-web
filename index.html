@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<meta name="description" content="LotPulse puts a 'Watch this car' button on every vehicle. Shoppers get price-drop texts, you see real demand per VIN and capture the highest-intent leads in the building.">
+<meta name="description" content="LotPulse puts a 'Watch this car' button on every vehicle. Shoppers get price-drop and new-arrival texts. You get real demand per VIN, pricing signals, scored leads in your CRM, and a weekly report.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -142,6 +142,27 @@
   .chip{background:#fff;border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:7px}
   .chip svg{color:var(--green)}
 
+  /* My Drive mock (shopper section) */
+  .mdcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;max-width:360px;margin:0 auto}
+  .mdcard-hd{display:flex;align-items:center;gap:9px;padding:14px 16px;
+    background:linear-gradient(180deg,#F5F8FF,#fff);border-bottom:1px solid var(--line-2)}
+  .mdcard-hd .mk{width:27px;height:27px;border-radius:8px;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .mdcard-hd b{font-size:14.5px;display:block}
+  .mdcard-hd span{font-size:11.5px;color:var(--slate)}
+  .mdrow{display:flex;gap:12px;align-items:center;padding:13px 16px}
+  .mdrow+.mdrow{border-top:1px solid var(--line-2)}
+  .mdthumb{width:62px;height:46px;border-radius:9px;flex-shrink:0;
+    background:linear-gradient(135deg,#DDE3EC,#EEF1F7)}
+  .mdname{font-size:14px;font-weight:600}
+  .mdprice{font-family:'Plus Jakarta Sans';font-weight:800;font-size:17px;margin-top:3px}
+  .mdprice em{font-style:normal;font-family:'Inter';font-size:11.5px;font-weight:700;
+    color:var(--green);background:var(--green-soft);border-radius:5px;padding:2px 7px;
+    margin-left:6px;white-space:nowrap}
+  .mdfoot{padding:11px 16px;border-top:1px solid var(--line-2);font-size:11.5px;
+    color:var(--mute);text-align:center}
+
   /* CTA */
   .cta{background:var(--blue);color:#fff;text-align:center;border-radius:24px;padding:64px 32px;position:relative;overflow:hidden}
   .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.14),transparent 60%)}
@@ -235,7 +256,7 @@
     <div>
       <div class="eyebrow"><span class="dot"></span>Demand intelligence for car dealers</div>
       <h1>Turn browsers into buyers — <span class="blue">right on your lot</span>.</h1>
-      <p class="lede">LotPulse puts a "Watch this car" button on every vehicle. Shoppers get a text when the price drops. You see exactly which cars real buyers want — and capture the highest-intent leads in the building.</p>
+      <p class="lede">LotPulse puts a "Watch this car" button on every vehicle. Shoppers get a text when the price drops — or when one just like it lands on your lot. You see exactly which cars real buyers want, and capture the highest-intent leads in the building.</p>
       <div class="herobtns">
         <a class="btn-primary" href="#demo">Book a demo
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -280,17 +301,17 @@
   <div class="wrap band-grid">
     <div>
       <h2>Your leads die at the form.</h2>
-      <p>Every "request a quote" button means the same thing to a shopper: a salesperson is about to call me. So they don't fill it out. They leave, and you never knew they were interested.</p>
+      <p>A "request a quote" button asks the shopper to commit to a conversation before they get anything back. Most won't. They leave, and you never knew they were interested.</p>
       <p>The shoppers who want your cars the most are browsing silently — and walking.</p>
-      <div class="pull">LotPulse gives them a reason to raise their hand: a price-drop text, with zero pressure.</div>
+      <div class="pull">LotPulse gives them a reason to raise their hand: something useful in return, the moment they ask.</div>
     </div>
     <div class="formcompare">
-      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">"Get a quote" → a rep calls you</span></div>
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">A form, before they get anything back</span></div>
       <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">Third-party leads sold to your competitors</span></div>
-      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">No idea who's actually interested</span></div>
-      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">"Watch this car" → a text when it drops</span></div>
+      <div class="fc-row"><span class="fc-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span class="fc-old">No idea which cars buyers actually want</span></div>
+      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">One tap, and the shopper gets something useful</span></div>
       <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">Real demand, per VIN, on a live board</span></div>
-      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">The hottest leads, straight to your CRM</span></div>
+      <div class="fc-row"><span class="fc-ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="fc-new">Scored leads, straight into your CRM</span></div>
     </div>
   </div>
 </section>
@@ -314,8 +335,8 @@
       </div>
       <div class="step">
         <div class="sn">3</div>
-        <h3>A price move notifies everyone</h3>
-        <p>Drop a price and every watcher gets a text the same minute. Watch demand turn into showroom visits — and the leads flow to your CRM.</p>
+        <h3>Every move brings them back</h3>
+        <p>Drop a price and every watcher gets a text the same minute. When a similar unit lands, the shoppers who wanted that car hear about it first. Leads flow to your CRM, scored.</p>
       </div>
     </div>
   </div>
@@ -339,9 +360,19 @@
         <p>A watcher is a buyer who raised their hand on a specific car. They flow to your CRM scored hot, warm, or cool — so your BDC calls the right ten, not all two hundred.</p>
       </div>
       <div class="bcard">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14"/></svg></div>
-        <h3>Move metal faster</h3>
-        <p>Aging unit with no demand? That's your reprice. Drop the price and notify every watcher at once — turn a stale listing into a sold one.</p>
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Pricing signals, not guesswork</h3>
+        <p>We cross real watcher demand with days on lot and your price history. Eight people watching and no price move in three weeks? Hold firm. Forty-five days and nobody watching? That's your reprice — drop it and every watcher hears the same minute.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></div>
+        <h3>A Monday morning report</h3>
+        <p>New watchers, hot shoppers, texts sent, and which sold cars had someone watching — emailed to you every week. Manage a group? One rollup covers every rooftop.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><path d="M3 21h18"/></svg></div>
+        <h3>Prove it against your sold list</h3>
+        <p>Upload your sold and prospect lists and we match them to watchers by phone — so you can see which buyers had been following the car before they bought. Your lists are matched and discarded, never stored.</p>
       </div>
       <div class="bcard">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
@@ -359,16 +390,36 @@
       <div class="sec-eyebrow" style="text-align:left">For your shoppers</div>
       <h2>The Carvana experience — on your website.</h2>
       <p>Today's buyers expect to shop on their own terms. LotPulse gives them a modern, low-friction way to stay close to the car they want — no form, no back-and-forth just to track a price.</p>
-      <p>It builds trust with the shopper and keeps them on <em>your</em> site instead of drifting to a third-party marketplace.</p>
+      <p>Every shopper who watches a car gets <strong>My Drive</strong>: a private page with everything they're following, what the price has done since, and what just landed that's like it. It keeps them coming back to <em>your</em> inventory instead of drifting to a third-party marketplace.</p>
       <div class="chiprow">
         <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No forms to fill out</span>
         <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Price-drop alerts</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>New-arrival alerts</span>
         <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Cancel anytime</span>
       </div>
     </div>
-    <div style="text-align:center">
-      <div style="font-size:120px;line-height:1;font-family:'Plus Jakarta Sans';font-weight:800;color:var(--blue)">98%</div>
-      <p style="color:var(--slate);font-size:16px;max-width:300px;margin:8px auto 0">of your traffic leaves without ever telling you they were interested. LotPulse changes that.</p>
+    <div>
+      <div class="mdcard">
+        <div class="mdcard-hd">
+          <span class="mk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 13 6 13 9 5 14 19 17 13 22 13"/></svg></span>
+          <div><b>My Drive</b><span>Every car they're watching, in one place</span></div>
+        </div>
+        <div class="mdrow">
+          <div class="mdthumb"></div>
+          <div class="mdinfo">
+            <div class="mdname">2024 Silverado 1500 LT</div>
+            <div class="mdprice">$42,995 <em>&darr; $1,050 since you watched</em></div>
+          </div>
+        </div>
+        <div class="mdrow">
+          <div class="mdthumb"></div>
+          <div class="mdinfo">
+            <div class="mdname">2023 Tahoe Z71</div>
+            <div class="mdprice">$54,200</div>
+          </div>
+        </div>
+        <div class="mdfoot">Private to them. Nothing to download, no password.</div>
+      </div>
     </div>
   </div>
 </section>
