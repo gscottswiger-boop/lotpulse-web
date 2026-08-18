@@ -163,6 +163,22 @@
   .mdfoot{padding:11px 16px;border-top:1px solid var(--line-2);font-size:11.5px;
     color:var(--mute);text-align:center}
 
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:10px;overflow:hidden;transition:box-shadow .15s}
+  .faq details[open]{box-shadow:var(--shadow)}
+  .faq summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:600;font-size:16px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";flex-shrink:0;width:9px;height:9px;border-right:2px solid var(--slate);
+    border-bottom:2px solid var(--slate);transform:rotate(45deg);transition:transform .18s;margin-top:-4px}
+  .faq details[open] summary::after{transform:rotate(-135deg);margin-top:2px}
+  .faq summary:hover{background:var(--cloud)}
+  .faq .anс,.faq .ans{padding:0 20px 18px;color:var(--slate);font-size:15px;line-height:1.65}
+  .faq .ans strong{color:var(--ink)}
+  .faq .ans code{background:var(--cloud);border-radius:4px;padding:1px 5px;font-size:13px}
+
   /* CTA */
   .cta{background:var(--blue);color:#fff;text-align:center;border-radius:24px;padding:64px 32px;position:relative;overflow:hidden}
   .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.14),transparent 60%)}
@@ -376,8 +392,8 @@
       </div>
       <div class="bcard">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <h3>Feeds your ad accounts</h3>
-        <p>Every watch is a first-party, high-intent signal — piped into Google and Meta to sharpen your campaigns in a world without cookies.</p>
+        <h3>First-party intent you own</h3>
+        <p>A watch is a named, consented, VIN-level intent signal — captured on your site, in your data, at exactly the moment third-party cookies stopped being able to see it.</p>
       </div>
     </div>
   </div>
@@ -425,6 +441,58 @@
 </section>
 
 <!-- CTA -->
+<section id="faq" style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Questions</div>
+      <h2 class="sec-title">The things dealers actually ask.</h2>
+      <p class="sec-sub">Straight answers, including where we're still building.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>How does LotPulse know when a price drops?</summary>
+        <div class="ans">We read your <strong>inventory feed</strong> — the same feed that powers your website — and record every price change we see. When a watched vehicle's price falls, everyone watching that VIN gets a text. To be precise about timing: alerts follow your feed's sync cadence, not the instant someone changes a number in another system. In practice that's fast, but it isn't a live DMS connection, and we'd rather tell you that up front than let you discover it.</div>
+      </details>
+      <details>
+        <summary>Which website platforms does it work on?</summary>
+        <div class="ans">Live and proven today on <strong>Dealer Inspire</strong> and <strong>Dealer.com (DDC)</strong>, with placement tuned to each. Other platforms — DealerOn, Sincro, custom builds — aren't supported out of the box. The widget anchors to specific parts of your vehicle pages, so a new platform needs a short compatibility pass first. Ask us and we'll tell you honestly whether yours is ready.</div>
+      </details>
+      <details>
+        <summary>What does installation actually involve?</summary>
+        <div class="ans">One tag in <strong>Google Tag Manager</strong> and a link to your inventory feed. No site redesign, no code changes for your web vendor, no IT ticket. Most rooftops are live the same day the feed is connected.</div>
+      </details>
+      <details>
+        <summary>How do you handle TCPA and text-message consent?</summary>
+        <div class="ans">Consent is a separate, optional checkbox that is <strong>unchecked by default</strong> — and watching a car is never conditional on agreeing to texts. We store the exact consent wording shown, the timestamp, the phone number, and the vehicle, in an append-only record. STOP, START and HELP all work. Opted-out numbers are permanently suppressed. Texts only send between 8am and 9pm in your local time zone. Our messaging is registered with the carriers under our own A2P 10DLC brand and campaigns.</div>
+      </details>
+      <details>
+        <summary>Will this spam my shoppers?</summary>
+        <div class="ans">No, and the limits are built in rather than left to judgment. A shopper only hears about the specific vehicle they chose to watch. Alerts are deduplicated, so a feed hiccup can't re-send the same message. Demand nudges are capped at one per shopper per vehicle, ever. When a car sells, alerts for it stop. And every message carries a working opt-out.</div>
+      </details>
+      <details>
+        <summary>How do the leads reach my CRM?</summary>
+        <div class="ans">As <strong>ADF/XML</strong> — the automotive lead standard — delivered to whatever email address your CRM ingests leads from. That works with essentially every CRM in the industry. What it isn't: a named native connector to VinSolutions, Elead or DealerSocket with bidirectional sync and automated task creation. If you need that depth, tell us and we'll be straight about where we are.</div>
+      </details>
+      <details>
+        <summary>What do I actually see on my end?</summary>
+        <div class="ans">A live board ranking every vehicle by how many real shoppers are watching it, a scored shopper list with tap-to-call numbers, pricing signals that cross demand against days on lot, and a report emailed to you every Monday. Run a group? One rollup covers every rooftop.</div>
+      </details>
+      <details>
+        <summary>What happens to a shopper's phone number?</summary>
+        <div class="ans">It's used to send the alerts they asked for and to deliver the lead to you. That's it. We don't sell it, we don't share it with other dealers, and we don't enrich it against third-party data brokers. If you upload lists for matchback reporting, they're matched in memory and discarded — never stored.</div>
+      </details>
+      <details>
+        <summary>What does it cost, and am I locked in?</summary>
+        <div class="ans"><strong>$899 per rooftop per month</strong>, or less through a partner agency. Thirty days free on your real inventory first, no setup fee. After that it's month-to-month — cancel with 30 days' notice. There's no annual term, no early-termination fee, and no auto-renewing multi-year deal. You will sign a straightforward service agreement before going live, which is what lets us text on your dealership's behalf.</div>
+      </details>
+      <details>
+        <summary>Does this replace my existing lead forms or chat?</summary>
+        <div class="ans">No. It captures the shoppers those tools miss — the ones who won't fill in a form to ask about a price, and who leave without telling you they were interested. It runs alongside whatever you already have.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section id="demo">
   <div class="wrap">
     <div class="cta">
@@ -469,7 +537,7 @@
     <button class="lp-x" id="lpClose" aria-label="Close">&times;</button>
     <div class="lp-badge">30 days free</div>
     <h3 id="lpTitle">Try LotPulse on your own inventory.</h3>
-    <p>Run it free for 30 days on your real lot. No contract, no setup fee &mdash; cancel any time.</p>
+    <p>Run it free for 30 days on your real lot. No setup fee. Month-to-month &mdash; cancel with 30 days' notice.</p>
   </div>
   <div class="lp-body">
     <form id="lpForm" novalidate>
