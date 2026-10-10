@@ -171,9 +171,9 @@
   /* LotPulse Promo section */
   .promo{background:#fff;border-top:1px solid var(--line-2)}
   .promo-top{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-bottom:56px}
-  .vp-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-  .vp-brand img{height:49px;width:auto;display:block}
-  .vp-brand span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-left:12px;border-left:1px solid var(--line)}
+  .vp-brand{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:18px}
+  .vp-brand img{height:46px;width:auto;display:block}
+  .vp-brand span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-left:12px;border-left:1px solid var(--line);white-space:nowrap}
   .promo h2{font-size:34px;font-weight:800;line-height:1.14;margin-bottom:18px}
   .promo-lead{font-size:17px;color:var(--slate);margin-bottom:14px}
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
@@ -251,6 +251,8 @@
     .promo-bridge{font-size:17px}
   }
   @media (max-width:420px){
+    .vp-brand{gap:6px}
+    .vp-brand span{flex-basis:100%;border-left:0;padding-left:0}
     .duo{grid-template-columns:1fr}
     .pm-amt{font-size:36px}
   }
@@ -464,7 +466,7 @@
   <div class="wrap">
     <div class="promo-top">
       <div>
-        <div class="vp-brand"><img src="/vinpop-logo.png" alt="VinPop" width="168" height="49"><span>from LotPulse</span></div>
+        <div class="vp-brand"><img src="/vinpop-logo-v2.png" alt="VinPop" width="207" height="46"><span>from LotPulse</span></div>
         <h2>For the shopper who's ready, put a real offer on the car.</h2>
         <p class="promo-lead">Some shoppers want to watch quietly. Others will raise their hand right now for the right deal. VinPop shows a dollar offer on the exact vehicle they're viewing, in your dealership's name, and sends the lead straight to your CRM with the car and the offer attached.</p>
         <div class="duo">
