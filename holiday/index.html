@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>VinPop holiday scratch-offs | LotPulse</title>
+<meta name="description" content="Shoppers scratch a holiday card on your vehicle pages, reveal your offer, and land in your CRM. Scratch the demo yourself.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LotPulse">
+<meta property="og:title" content="VinPop holiday scratch-offs for your VDPs">
+<meta property="og:description" content="Shoppers scratch, reveal your offer, and land in your CRM. Scratch the demo card yourself.">
+<meta property="og:url" content="https://lotpulse.io/holiday">
+<meta property="og:image" content="https://lotpulse.io/favicon-512x512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Short link: forwards to the scratch demo with tracking. Change DEFAULTS to retarget. -->
+<meta http-equiv="refresh" content="0; url=/?utm_source=linkedin&amp;utm_medium=dm&amp;utm_campaign=holiday_vinpop_2026&amp;utm_content=holiday_shortlink#try">
+<script>
+(function () {
+  var DEFAULTS = {
+    utm_source: "linkedin",
+    utm_medium: "dm",
+    utm_campaign: "holiday_vinpop_2026",
+    utm_content: "holiday_shortlink"
+  };
+  // Any utm_* (or other) params already on the short link win over the defaults,
+  // so lotpulse.io/holiday?utm_source=sms still tracks as SMS.
+  var params = new URLSearchParams(location.search);
+  Object.keys(DEFAULTS).forEach(function (k) { if (!params.has(k)) params.set(k, DEFAULTS[k]); });
+  location.replace("/?" + params.toString() + "#try");
+})();
+</script>
+<style>body{font:16px/1.5 Arial,Helvetica,sans-serif;color:#111;margin:40px 20px;text-align:center}a{color:#1447FF}</style>
+</head>
+<body>
+<p>Taking you to the VinPop holiday scratch-off demo&hellip;</p>
+<p><a href="/?utm_source=linkedin&amp;utm_medium=dm&amp;utm_campaign=holiday_vinpop_2026&amp;utm_content=holiday_shortlink#try">Continue to lotpulse.io</a></p>
+</body>
+</html>
