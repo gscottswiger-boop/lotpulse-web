@@ -194,11 +194,11 @@
   .pm-page u{display:block;height:9px;border-radius:5px;background:#E3E8F0}
   .pm-page u:nth-child(1){width:62%}.pm-page u:nth-child(2){width:40%}
   .pm-pop{filter:drop-shadow(0 16px 22px rgba(14,19,32,.18))}
-  /* hang-tag top + punched hole, same shape as the live popup */
-  .pm-roof{position:relative;height:62px;margin-bottom:-1px;background:var(--dealer);
-    clip-path:polygon(0 100%,0 calc(100% - 3px),calc(50% - 14px) 7px,calc(50% - 8px) 2.5px,calc(50% - 3px) .5px,50% 0,calc(50% + 3px) .5px,calc(50% + 8px) 2.5px,calc(50% + 14px) 7px,100% calc(100% - 3px),100% 100%);
-    -webkit-mask:radial-gradient(circle at 50% 33px,transparent 8px,#000 8.5px);mask:radial-gradient(circle at 50% 33px,transparent 8px,#000 8.5px)}
-  .pm-roof i{position:absolute;left:50%;top:33px;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:2.5px solid rgba(255,255,255,.5)}
+  /* flat-top hang tag + punched hole, same shape as the live popup */
+  .pm-roof{position:relative;height:48px;margin-bottom:-1px;background:var(--dealer);
+    clip-path:polygon(0 100%,0 44.7px,1.3px 38px,39px 2.2px,43px .5px,48px 0,calc(100% - 48px) 0,calc(100% - 43px) .5px,calc(100% - 39px) 2.2px,calc(100% - 1.3px) 38px,100% 44.7px,100% 100%);
+    -webkit-mask:radial-gradient(circle at 50% 22px,transparent 8px,#000 8.5px);mask:radial-gradient(circle at 50% 22px,transparent 8px,#000 8.5px)}
+  .pm-roof i{position:absolute;left:50%;top:22px;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:rgba(255,255,255,.32)}
   .pm-hd{background:var(--dealer);color:#fff;text-align:center;padding:4px 16px 18px}
   .pm-dealer{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
   .pm-amt{font-family:'Plus Jakarta Sans';font-weight:800;font-size:42px;line-height:1.05;letter-spacing:-.02em;margin-top:6px}
@@ -211,10 +211,10 @@
   .pm-fine{font-size:10.5px;color:var(--mute);text-align:center;line-height:1.45;margin-top:10px}
   /* compact reopen tag at the page edge, same shape as the live tab */
   .pm-tab{position:absolute;right:0;top:56%;filter:drop-shadow(-3px 5px 8px rgba(14,19,32,.22))}
-  .pm-tab span{display:flex;align-items:center;height:40px;padding:0 11px 0 26px;background:var(--dealer);color:#fff;
+  .pm-tab span{display:flex;align-items:center;height:40px;padding:0 11px 0 23px;background:radial-gradient(circle at 12px 50%,rgba(255,255,255,.32) 5.6px,transparent 6.1px),var(--dealer);color:#fff;
     font-family:'Plus Jakarta Sans';font-weight:800;font-size:16px;letter-spacing:-.01em;
-    clip-path:polygon(1px calc(50% - 2px),15px 1.5px,18px 0,100% 0,100% 100%,18px 100%,15px calc(100% - 1.5px),1px calc(50% + 2px));
-    -webkit-mask:radial-gradient(circle at 13.5px 50%,transparent 3.5px,#000 4px);mask:radial-gradient(circle at 13.5px 50%,transparent 3.5px,#000 4px)}
+    clip-path:polygon(0 9px,1px 6.5px,7px 1.2px,10.5px 0,100% 0,100% 100%,10.5px 100%,7px calc(100% - 1.2px),1px calc(100% - 6.5px),0 calc(100% - 9px));
+    -webkit-mask:radial-gradient(circle at 12px 50%,transparent 3.5px,#000 4px);mask:radial-gradient(circle at 12px 50%,transparent 3.5px,#000 4px)}
   .pm-cap{max-width:380px;margin:14px auto 0;font-size:12.5px;color:var(--mute);text-align:center;line-height:1.5}
 
   /* FAQ */
@@ -370,11 +370,11 @@
   #try .sp-card.pop{animation:sp-pop .4s cubic-bezier(.2,1.25,.4,1)}
   #try .sp-card.tall.pop{animation:none}
   @keyframes sp-pop{from{opacity:0;transform:translateY(calc(-50% + 18px))}}
-  #try .sp-roof{height:68px;margin-bottom:-1px;background:var(--sp-accent);position:relative;
-    clip-path:polygon(0 100%,0 calc(100% - 4px),calc(50% - 17px) 8px,calc(50% - 10px) 3px,calc(50% - 4px) .5px,50% 0,calc(50% + 4px) .5px,calc(50% + 10px) 3px,calc(50% + 17px) 8px,100% calc(100% - 4px),100% 100%);
-    -webkit-mask:radial-gradient(circle at 50% 37px,transparent 9px,#000 9.6px);mask:radial-gradient(circle at 50% 37px,transparent 9px,#000 9.6px)}
-  #try .sp-roof i{position:absolute;left:50%;top:37px;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid rgba(255,255,255,.5)}
-  #try .sp-x{position:absolute;top:60px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:2;padding:0}
+  #try .sp-roof{height:54px;margin-bottom:-1px;background:var(--sp-accent);position:relative;
+    clip-path:polygon(0 100%,0 48px,1.5px 43px,46px 2.5px,50px .6px,55px 0,calc(100% - 55px) 0,calc(100% - 50px) .6px,calc(100% - 46px) 2.5px,calc(100% - 1.5px) 43px,100% 48px,100% 100%);
+    -webkit-mask:radial-gradient(circle at 50% 26px,transparent 9px,#000 9.6px);mask:radial-gradient(circle at 50% 26px,transparent 9px,#000 9.6px)}
+  #try .sp-roof i{position:absolute;left:50%;top:26px;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:rgba(255,255,255,.32)}
+  #try .sp-x{position:absolute;top:46px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:2;padding:0}
   #try .sp-band{background:var(--sp-accent);color:#fff;padding:12px 18px 16px}
   #try .sp-dealer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
   #try .sp-band h3{font:800 22px/1.15 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:-.01em;margin:6px 46px 0 0;text-wrap:balance;color:#fff}
@@ -584,7 +584,7 @@
   <div class="wrap">
     <div class="promo-top">
       <div>
-        <div class="vp-brand"><img src="/vinpop-logo-v2.png?v=3" alt="VinPop" width="166" height="46"><span>from LotPulse</span></div>
+        <div class="vp-brand"><img src="/vinpop-logo-v2.png?v=4" alt="VinPop" width="166" height="46"><span>from LotPulse</span></div>
         <h2>For the shopper who's ready, put a real offer on the car.</h2>
         <p class="promo-lead">Some shoppers want to watch quietly. Others will raise their hand right now for the right deal. VinPop shows a dollar offer on the exact vehicle they're viewing, in your dealership's name, and sends the lead straight to your CRM with the car and the offer attached.</p>
         <div class="duo">
