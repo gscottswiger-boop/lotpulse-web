@@ -18,7 +18,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<meta name="description" content="LotPulse puts a 'Watch this car' button on every vehicle. Shoppers get price-drop and new-arrival texts. You get real demand per VIN, pricing signals, scored leads in your CRM, and a weekly report. Plus VinPop, dealer-branded vehicle offers that send leads straight to your CRM.">
+<meta name="description" content="VinWatch, from LotPulse, puts a 'Watch this car' button on every vehicle. Shoppers get price-drop and new-arrival texts. You get real demand per VIN, pricing signals, scored leads in your CRM, and a weekly report. Plus VinPop, dealer-branded vehicle offers that send leads straight to your CRM.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -175,6 +175,7 @@
   .vp-brand{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:18px}
   .vp-brand img{height:46px;width:auto;display:block}
   .vp-brand span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-left:12px;border-left:1px solid var(--line);white-space:nowrap}
+  .vw-brand{justify-content:center;margin-bottom:22px}
   .promo h2{font-size:34px;font-weight:800;line-height:1.14;margin-bottom:18px}
   .promo-lead{font-size:17px;color:var(--slate);margin-bottom:14px}
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
@@ -262,6 +263,7 @@
   @media (max-width:420px){
     .vp-brand{gap:6px}
     .vp-brand span{flex-basis:100%;border-left:0;padding-left:0}
+    .vw-brand span{text-align:center}
     .duo{grid-template-columns:1fr}
     .pm-amt{font-size:36px}
   }
@@ -569,7 +571,7 @@
       <span>Lot<em>Pulse</em><sup class="tm">&trade;</sup></span>
     </div>
     <div class="navlinks">
-      <a href="#how">How it works</a>
+      <a href="#how">VinWatch alerts</a>
       <a href="#vinpop">VinPop offers</a>
       <a href="#try">Try it</a>
       <a href="#dashboard">Dashboard</a>
@@ -585,7 +587,7 @@
     <div>
       <div class="eyebrow"><span class="dot"></span>Demand intelligence for car dealers</div>
       <h1>Turn browsers into buyers — <span class="blue">right on your lot</span>.</h1>
-      <p class="lede">LotPulse puts a "Watch this car" button on every vehicle. Shoppers get a text when the price drops — or when one just like it lands on your lot. You see exactly which cars real buyers want, and capture the highest-intent leads in the building.</p>
+      <p class="lede">VinWatch, from LotPulse, puts a "Watch this car" button on every vehicle. Shoppers get a text when the price drops — or when one just like it lands on your lot. You see exactly which cars real buyers want, and capture the highest-intent leads in the building.</p>
       <div class="herobtns">
         <a class="btn-primary" href="#demo">Book a demo
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -648,6 +650,7 @@
 <!-- How it works -->
 <section id="how">
   <div class="wrap">
+    <div class="vp-brand vw-brand"><img src="/vinwatch-logo.png?v=1" alt="VinWatch" width="241" height="46"><span>from LotPulse</span></div>
     <div class="sec-eyebrow">How it works</div>
     <h2 class="sec-title">One button. A whole demand engine.</h2>
     <p class="sec-sub">It installs on your current website in minutes — no new platform, no rebuild.</p>
@@ -723,9 +726,9 @@
         <p class="promo-lead">Some shoppers want to watch quietly. Others will raise their hand right now for the right deal. VinPop shows a dollar offer on the exact vehicle they're viewing, in your dealership's name, and sends the lead straight to your CRM with the car and the offer attached.</p>
         <div class="duo">
           <div>
-            <b>Watch this car</b>
+            <b>VinWatch</b>
             <i>For the shopper who isn't ready to talk</i>
-            <span>One tap and a phone number. They get price-drop and arrival texts.</span>
+            <span>One tap on "Watch this car" and a phone number. They get price-drop and arrival texts.</span>
           </div>
           <div class="is-promo">
             <b>VinPop</b>
@@ -978,7 +981,7 @@
     <div>
       <div class="sec-eyebrow" style="text-align:left">For your shoppers</div>
       <h2>The Carvana experience — on your website.</h2>
-      <p>Today's buyers expect to shop on their own terms. LotPulse gives them a modern, low-friction way to stay close to the car they want — no form, no back-and-forth just to track a price.</p>
+      <p>Today's buyers expect to shop on their own terms. VinWatch gives them a modern, low-friction way to stay close to the car they want — no form, no back-and-forth just to track a price.</p>
       <p>Every shopper who watches a car gets <strong>My Drive</strong>: a private page with everything they're following, what the price has done since, and what just landed that's like it. It keeps them coming back to <em>your</em> inventory instead of drifting to a third-party marketplace.</p>
       <div class="chiprow">
         <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No forms to fill out</span>
@@ -1023,12 +1026,12 @@
     </div>
     <div class="faq">
       <details>
-        <summary>How does LotPulse know when a price drops?</summary>
+        <summary>How does VinWatch know when a price drops?</summary>
         <div class="ans">We read your <strong>inventory feed</strong> — the same feed that powers your website — and record every price change we see. When a watched vehicle's price falls, everyone watching that VIN gets a text. To be precise about timing: alerts follow your feed's sync cadence, not the instant someone changes a number in another system. In practice that's fast, but it isn't a live DMS connection, and we'd rather tell you that up front than let you discover it.</div>
       </details>
       <details>
         <summary>Which website platforms does it work on?</summary>
-        <div class="ans">The Watch button is live and proven today on <strong>Dealer Inspire</strong> and <strong>Dealer.com (DDC)</strong>, with placement tuned to each. Other platforms — DealerOn, Sincro, custom builds — aren't supported out of the box. The widget anchors to specific parts of your vehicle pages, so a new platform needs a short compatibility pass first. Ask us and we'll tell you honestly whether yours is ready. VinPop, our offer popup, is newer: it's built and tested, and we'll tell you exactly where it has run when you ask.</div>
+        <div class="ans">The VinWatch button is live and proven today on <strong>Dealer Inspire</strong> and <strong>Dealer.com (DDC)</strong>, with placement tuned to each. Other platforms — DealerOn, Sincro, custom builds — aren't supported out of the box. The widget anchors to specific parts of your vehicle pages, so a new platform needs a short compatibility pass first. Ask us and we'll tell you honestly whether yours is ready. VinPop, our offer popup, is newer: it's built and tested, and we'll tell you exactly where it has run when you ask.</div>
       </details>
       <details>
         <summary>What does installation actually involve?</summary>
@@ -1052,11 +1055,11 @@
       </details>
       <details>
         <summary>What happens to a shopper's information?</summary>
-        <div class="ans">The Watch button collects a phone number, used to send the alerts they asked for and to deliver the lead to you. VinPop collects a name, email and phone number, used to deliver that lead to you; nothing is texted from it. That's it. We don't sell any of it, we don't share it with other dealers, and we don't enrich it against third-party data brokers. If you upload lists for matchback reporting, they're matched in memory and discarded — never stored.</div>
+        <div class="ans">The VinWatch button collects a phone number, used to send the alerts they asked for and to deliver the lead to you. VinPop collects a name, email and phone number, used to deliver that lead to you; nothing is texted from it. That's it. We don't sell any of it, we don't share it with other dealers, and we don't enrich it against third-party data brokers. If you upload lists for matchback reporting, they're matched in memory and discarded — never stored.</div>
       </details>
       <details>
         <summary>Am I locked into a contract?</summary>
-        <div class="ans">No. You start with <strong>30 days free on your real inventory</strong>, with no setup fee. After that it's month-to-month &mdash; cancel with 30 days' notice. There's no annual term, no early-termination fee, and no auto-renewing multi-year deal. You will sign a straightforward service agreement before going live, which is what lets us text on your dealership's behalf.</div>
+        <div class="ans">No. VinWatch and VinPop both start with <strong>30 days free on your real inventory</strong>, with no setup fee. After that it's month-to-month &mdash; cancel with 30 days' notice. There's no annual term, no early-termination fee, and no auto-renewing multi-year deal. You will sign a straightforward service agreement before going live; for VinWatch, that's also what lets us text on your dealership's behalf.</div>
       </details>
       <details>
         <summary>Does this replace my existing lead forms or chat?</summary>
@@ -1064,7 +1067,7 @@
       </details>
       <details>
         <summary>Is VinPop a lead form?</summary>
-        <div class="ans">Yes. It asks for a name, email and phone number, and we'd rather say so plainly. The difference is what the shopper gets first: a specific dollar offer on the car they're looking at. It runs alongside the Watch button, which stays one tap and a phone number.</div>
+        <div class="ans">Yes. It asks for a name, email and phone number, and we'd rather say so plainly. The difference is what the shopper gets first: a specific dollar offer on the car they're looking at. It runs alongside the VinWatch button, which stays one tap and a phone number.</div>
       </details>
       <details>
         <summary>Will VinPop annoy my shoppers?</summary>
@@ -1080,7 +1083,7 @@
       </details>
       <details>
         <summary>Will I see this in my own Google Analytics?</summary>
-        <div class="ans">Yes, once it's set up. Both tools push events to your website's own data layer: widget views, watch started, abandoned and completed for the Watch button, and view, submit, dismiss and reopen for VinPop. Getting them into your GA4 reports takes a few triggers in Google Tag Manager for each rooftop, so they don't appear on their own the day the tag goes in.</div>
+        <div class="ans">Yes, once it's set up. Both tools push events to your website's own data layer: widget views, watch started, abandoned and completed for VinWatch, and view, submit, dismiss and reopen for VinPop. Getting them into your GA4 reports takes a few triggers in Google Tag Manager for each rooftop, so they don't appear on their own the day the tag goes in.</div>
       </details>
     </div>
   </div>
@@ -1129,8 +1132,8 @@
   <div class="lp-head">
     <button class="lp-x" id="lpClose" aria-label="Close">&times;</button>
     <div class="lp-badge">30 days free</div>
-    <h3 id="lpTitle">Try LotPulse on your own inventory.</h3>
-    <p>Run it free for 30 days on your real lot. No setup fee. Month-to-month &mdash; cancel with 30 days' notice.</p>
+    <h3 id="lpTitle">Try VinWatch and VinPop on your own inventory.</h3>
+    <p>Run either one, or both, free for 30 days on your real lot. No setup fee. Month-to-month &mdash; cancel with 30 days' notice.</p>
   </div>
   <div class="lp-body">
     <form id="lpForm" novalidate>
@@ -1162,15 +1165,25 @@
           <input type="tel" id="lp-phone" autocomplete="tel">
         </div>
       </div>
-      <div class="lp-row">
-        <label for="lp-rooftops">How many rooftops?</label>
-        <select id="lp-rooftops">
-          <option value="1">1 rooftop</option>
-          <option value="2-5">2&ndash;5 rooftops</option>
-          <option value="6-20">6&ndash;20 rooftops</option>
-          <option value="20+">20+ rooftops</option>
-          <option value="agency">I'm an agency</option>
-        </select>
+      <div class="lp-row2">
+        <div class="lp-row">
+          <label for="lp-interest">Interested in</label>
+          <select id="lp-interest">
+            <option value="Both">Both</option>
+            <option value="VinWatch">VinWatch</option>
+            <option value="VinPop">VinPop</option>
+          </select>
+        </div>
+        <div class="lp-row">
+          <label for="lp-rooftops">How many rooftops?</label>
+          <select id="lp-rooftops">
+            <option value="1">1 rooftop</option>
+            <option value="2-5">2&ndash;5 rooftops</option>
+            <option value="6-20">6&ndash;20 rooftops</option>
+            <option value="20+">20+ rooftops</option>
+            <option value="agency">I'm an agency</option>
+          </select>
+        </div>
       </div>
       <div class="lp-row">
         <label for="lp-notes">Anything we should know? <span style="font-weight:400;text-transform:none">(optional)</span></label>
@@ -1202,8 +1215,12 @@
   var err   = document.getElementById("lpErr");
   var btn   = document.getElementById("lpSubmit");
   var shown = false;
+  // Test: add ?lp_trial_test=1 to the URL to open it immediately, ignoring the memory.
+  var TEST = /[?&]lp_trial_test=1\b/.test(location.search);
+  function ga(name, extra){ try{ if(window.gtag) gtag("event", name, extra || {}); }catch(e){} }
 
   function suppressed(){
+    if(TEST) return false;
     try{
       var v = localStorage.getItem(KEY);
       if(!v) return false;
@@ -1213,9 +1230,10 @@
   }
   function remember(val){ try{ localStorage.setItem(KEY, val); }catch(e){} }
 
-  function open(){
+  function open(trigger){
     if(shown || suppressed()) return;
     shown = true;
+    ga("trial_popup_view", { trigger: typeof trigger === "string" ? trigger : "timer" });
     scrim.classList.add("open"); modal.classList.add("open");
     setTimeout(function(){ var n=document.getElementById("lp-name"); if(n) n.focus(); }, 280);
   }
@@ -1235,25 +1253,29 @@
       e.preventDefault();
       shown = false;                 // an explicit click always opens it
       try{ localStorage.removeItem(KEY); }catch(err2){}
-      open();
+      open("button");
     });
   });
 
   // Desktop: exit intent. Touch devices have no mouseleave, so use a timer.
   var isTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
-  if(isTouch){
-    setTimeout(open, DELAY_MS);
+  if(TEST){
+    setTimeout(function(){ open("test"); }, 300);
+  } else if(isTouch){
+    setTimeout(function(){ open("timer"); }, DELAY_MS);
   } else {
     document.addEventListener("mouseout", function(e){
-      if(!e.relatedTarget && e.clientY <= 0) open();
+      if(!e.relatedTarget && e.clientY <= 0) open("exit_intent");
     });
-    setTimeout(open, 60000);         // long backstop if they never exit-intent
+    setTimeout(function(){ open("timer"); }, 60000);   // long backstop if they never exit-intent
   }
 
   form.addEventListener("submit", function(e){
     e.preventDefault();
     err.style.display = "none";
 
+    var interest = document.getElementById("lp-interest").value;
+    var extra = document.getElementById("lp-notes").value.trim();
     var payload = {
       company_website: document.getElementById("lp-hp").value,   // honeypot
       name:       document.getElementById("lp-name").value.trim(),
@@ -1261,7 +1283,8 @@
       email:      document.getElementById("lp-email").value.trim(),
       phone:      document.getElementById("lp-phone").value.trim(),
       rooftops:   document.getElementById("lp-rooftops").value,
-      notes:      document.getElementById("lp-notes").value.trim()
+      // The notes line marks the lead as a lotpulse.io popup lead and carries the product asked about.
+      notes:      "30-days-free popup on lotpulse.io. Interested in: " + interest + (extra ? ". Note: " + extra : "")
     };
 
     if(!payload.name || !payload.dealership || !payload.email){
@@ -1281,6 +1304,7 @@
     }).then(function(r){ return r.json(); }).then(function(res){
       if(res && res.ok){
         remember("submitted");
+        ga("generate_lead", { form: "trial_popup", interest: interest });
         form.style.display = "none";
         done.style.display = "block";
       } else {
