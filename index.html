@@ -425,6 +425,139 @@
     #try .sp-themes{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media (prefers-reduced-motion:reduce){#try *{animation:none!important;transition:none!important}}
+  /* dashboard examples (shared with vinpop.io). Colors are scoped to the
+     examples so they do not change the rest of this page. */
+  #dashboard .db-grid,#dashboard .db-note{--navy:#12307a;--ink:#14213d;--blue:#1447ff;--line:#dfe4ef;--body:#55607a;--teal:#0d9488;--teal-dark:#0b7a70;--teal-mist:#e8f6f4;color:var(--ink);line-height:1.55}
+  #dashboard .sec-sub{max-width:680px;margin-bottom:0}
+  #dashboard figure{margin:0}
+  .db-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:44px}
+  .db-panel{margin:0;display:flex;flex-direction:column;gap:12px}
+  .db-wide{grid-column:1/-1}
+  .db-panel figcaption{font-size:14.5px;color:var(--body)}
+  .db-panel figcaption b{color:var(--ink)}
+  .db-body{background:#f6f7f9;border:1px solid var(--line);border-radius:14px;padding:16px;flex:1;box-shadow:0 10px 30px rgba(20,33,61,.06)}
+  .db-wide .db-body{border-radius:0 0 14px 14px;border-top:0}
+  .db-chrome{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px 14px 0 0;padding:12px 16px}
+  .db-lp{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .db-lp i{width:24px;height:24px;border-radius:6px;background:#111827 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='2 13 6 13 9 5 14 19 17 13 22 13'/%3E%3C/svg%3E") center/14px no-repeat}
+  .db-lp sup{font-size:8px;opacity:.6}
+  .db-store{font-size:11px;font-weight:700;letter-spacing:.08em;border:1px solid var(--line);border-radius:8px;padding:5px 10px}
+  .db-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:14px}
+  .db-stats>div{padding:12px 8px;text-align:center}
+  .db-stats>div+div{border-left:1px solid #eef1f5}
+  .db-stats b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .db-stats span{display:block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--body);margin-top:2px}
+  .db-stats em{display:block;font-style:normal;font-size:12px;font-weight:700;margin-top:5px}
+  .c-blue{color:#1d4ed8}.c-red{color:#dc2626}.c-green{color:#0f766e}
+  .db-board{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .db-bh{display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #eef1f5}
+  .db-tag{font-size:11px;font-weight:700;letter-spacing:0;text-transform:none;padding:3px 9px;border-radius:6px}
+  .t-teal{background:var(--teal-mist);color:var(--teal-dark)}
+  .db-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto 120px 24px;gap:12px;align-items:center;padding:10px 14px;font-size:13.5px}
+  .db-row+.db-row{border-top:1px solid #eef1f5}
+  .db-thumb{width:44px;height:32px;border-radius:6px;background:linear-gradient(135deg,#cfd8e6,#9fb0c8)}
+  .db-veh{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .db-veh small{font-size:10px;font-weight:700;letter-spacing:.05em;background:#eef1f5;color:var(--body);border-radius:4px;padding:2px 6px;margin-left:6px}
+  .db-veh small.warn{background:#fef3c7;color:#92400e}
+  .db-price{font-weight:800}
+  .db-bar{display:flex;gap:2px}.db-bar i{flex:1;height:14px;border-radius:2px;background:#e5e7eb}.db-bar i.on{background:#e9a23b}
+  .db-n{font-weight:800;font-size:18px;color:#c2810c;text-align:right}.db-n.z{color:#9ca3af}
+  .db-h{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px}
+  .db-h .dot{width:9px;height:9px;border-radius:50%;background:#16a34a}
+  .db-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}
+  .db-tiles.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .db-tiles>div{background:#fff;border:1px solid #eceef2;border-radius:10px;padding:9px 4px;text-align:center}
+  .db-tiles b{display:block;font-size:19px;font-weight:800}
+  .db-tiles span{display:block;font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--body);margin-top:2px}
+  .db-lead{background:#fff;border:1px solid #eceef2;border-radius:10px;padding:11px 12px}
+  .db-lt{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .db-lt b{font-size:15px}.db-lt span{font-size:11.5px;color:var(--body)}
+  .db-pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .pl{font-size:10.5px;font-weight:700;letter-spacing:.04em;border-radius:5px;padding:3px 7px;background:#eef1f5;color:#4b5563}
+  .pl.g{background:#e7f5ec;color:#15803d}.pl.t{background:var(--teal-mist);color:var(--teal-dark);margin-left:6px}
+  .db-small{font-size:12px;color:var(--body)}
+  .db-small code{font-size:12px;color:var(--ink);font-weight:700}
+  .db-links{font-size:12.5px;color:#1d4ed8;font-weight:600;margin-top:5px}
+  .db-chip{display:inline-block;background:#fef3c7;color:#713f12;font-size:12px;font-weight:700;border-radius:999px;padding:5px 11px;margin-bottom:10px}
+  .db-vis{background:#fff;border:1px solid #eceef2;border-radius:10px;padding:9px 12px;margin-top:7px}
+  .db-vis b{font-size:13.5px}.db-vis b.m{color:#6b7280}
+  .db-meter{height:6px;border-radius:999px;background:#eceef2;margin:7px 0 5px;max-width:160px}.db-meter i{display:block;height:100%;border-radius:999px}
+  .db-seg{display:inline-flex;background:#eceef2;border-radius:9px;padding:3px;margin-bottom:10px;font-size:12.5px;font-weight:600}
+  .db-seg span{padding:6px 11px;border-radius:7px;color:var(--body)}.db-seg span.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .db-rule{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #eceef2;border-radius:9px;padding:8px 11px;margin-bottom:6px;font-size:13px;font-weight:600}
+  .db-rule span{flex:1}.db-rule .m{color:#9ca3af}
+  .db-rule b{font-size:12.5px;border:1px solid #e5e7eb;border-radius:6px;padding:2px 8px}
+  .tg{width:30px;height:17px;border-radius:999px;background:#d1d5db;position:relative;flex:none}
+  .tg::after{content:"";position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+  .tg.on{background:#0f766e}.tg.on::after{left:15px}
+  .db-sum{background:#e3f4ef;color:#0f5f54;font-size:12.5px;font-weight:700;border-radius:9px;padding:9px 11px;margin-top:8px}
+  .db-rep{font-size:13px;font-weight:800;border-radius:8px;padding:7px 10px;margin:4px 0 8px}
+  .db-rep.t{background:var(--teal-mist);color:var(--teal-dark)}.db-rep.g{background:#e7f5ec;color:#15803d}
+  .db-note{text-align:center;font-size:13px;color:var(--body);margin:26px 0 0}
+  @media (max-width:860px){.db-grid{grid-template-columns:1fr}}
+  @media (max-width:640px){
+    .db-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .db-stats>div:nth-child(3){border-left:0}
+    .db-stats>div:nth-child(n+3){border-top:1px solid #eef1f5}
+    .db-row{grid-template-columns:40px minmax(0,1fr) auto 22px}
+    .db-bar{display:none}
+    .db-tiles.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  /* dashboard examples: overview (Nov 2026 dashboard) */
+  .c-vp{color:var(--blue)}.c-vw{color:var(--teal-dark)}
+  .db-body.solo{border-radius:14px}
+  .db-wide .db-body.solo{border-top:1px solid var(--line);border-radius:14px}
+  .db-nav{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:14px}
+  .db-nav span{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:8px;color:var(--body)}
+  .db-nav span.on{background:#14181d;color:#fff}.db-nav span.vp{color:var(--blue)}.db-nav span.vw{color:var(--teal-dark)}
+  .db-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:14px;margin-bottom:14px}
+  .db-hero{background:#14181d;color:#fff;border-radius:12px;padding:16px 18px}
+  .db-hero .hl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c6cbd0}
+  .db-hero b{font-size:46px;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:#6ee7a8}
+  .db-hero .of{font-size:13px;color:#c6cbd0;margin-left:9px}
+  .db-hero .hb{display:flex;flex-wrap:wrap;gap:3px 14px;font-size:12.5px;font-weight:600;margin-top:4px}
+  .db-hero .b-vp{color:#a9bcff}.db-hero .b-vw{color:#6fd9cc}
+  .db-att{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+  .db-att .db-h{margin-bottom:8px}
+  .att{display:flex;justify-content:space-between;align-items:center;gap:10px;border-radius:8px;padding:7px 11px;font-size:12.5px;margin-top:5px;background:#f6f7f9}
+  .att b{font-weight:700}.att em{font-style:normal;font-weight:700;font-size:11.5px;white-space:nowrap}
+  .att.red{background:#fdecea}.att.red b,.att.red em{color:#b42318}
+  .att.blue{background:#e8eefe}.att.blue b,.att.blue em{color:var(--blue)}
+  .att.sky{background:#e8f1fb}.att.sky b,.att.sky em{color:#1d4ed8}
+  .att.quiet{color:var(--body)}.att.quiet em{color:#15803d}
+  .db-band{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .db-band+.db-band{margin-top:14px}
+  .db-band .bh{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;font-size:12.5px;color:#3f474f}
+  .db-band .bh b{font-size:14px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-right:6px}
+  .db-band .bh em{font-style:normal;font-weight:700;font-size:12px;white-space:nowrap}
+  .db-band.vp .bh{background:#e8eefe}.db-band.vp .bh b,.db-band.vp .bh em{color:var(--blue)}
+  .db-band.vw .bh{background:var(--teal-mist)}.db-band.vw .bh b,.db-band.vw .bh em{color:var(--teal-dark)}
+  .db-band .bt{display:grid;gap:8px;padding:12px}
+  .db-band .bt.four{grid-template-columns:repeat(4,minmax(0,1fr))}.db-band .bt.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .db-band .bt>div{border:1px solid #eceef2;border-radius:10px;padding:10px 11px;display:flex;flex-direction:column;gap:1px;min-width:0}
+  .db-band .bt span{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--body);line-height:1.3}
+  .db-band .bt b{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+  .db-band .bt b i{font-style:normal;font-size:13px;color:var(--body);font-weight:700}
+  .db-band .bt small{font-size:11px;color:var(--body);margin-top:auto;line-height:1.3}
+  .db-band .bt small.good{color:#15803d;font-weight:700}.db-band .bt small.blue{color:#1d4ed8;font-weight:700}
+  .db-meta{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--body);text-align:right}
+  .db-more{border:1px dashed #cfd6e2;border-radius:10px;text-align:center;font-size:12.5px;font-weight:700;color:var(--teal-dark);padding:9px;margin-top:9px}
+  .db-panel:not(.db-wide) .db-row{grid-template-columns:40px minmax(0,1fr) auto 64px 20px;gap:9px;font-size:12.5px;padding:10px 11px}
+  .gr{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:5px;font-size:11px;font-weight:800;margin-right:7px;vertical-align:1px}
+  .gr.a{background:#dcfce7;color:#15803d}.gr.c{background:#fef3c7;color:#92400e}
+  .pl.b{background:#e8eefe;color:var(--blue)}
+  .db-rep.b{background:#e8eefe;color:var(--blue)}
+  .db-mail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:14px;align-items:start}
+  .db-mail .db-tiles{margin-bottom:10px}.db-mail .db-tiles:last-child{margin-bottom:0}
+  .db-mail .db-rep{margin-top:0}
+  @media (max-width:860px){.db-top,.db-mail{grid-template-columns:1fr}}
+  @media (max-width:640px){
+    .db-band .bt.four,.db-band .bt.five{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .db-band .bh span{font-size:0}.db-band .bh span b{font-size:14px}
+    .db-nav span{padding:8px 10px;font-size:11px}
+    .db-meta{display:none}
+    .db-panel:not(.db-wide) .db-row{grid-template-columns:40px minmax(0,1fr) auto 20px}
+  }
 </style>
 </head>
 <body>
@@ -439,6 +572,7 @@
       <a href="#how">How it works</a>
       <a href="#vinpop">VinPop offers</a>
       <a href="#try">Try it</a>
+      <a href="#dashboard">Dashboard</a>
       <a href="#faq">FAQ</a>
     </div>
     <a class="navcta" href="#demo" id="nav-demo">Book a demo</a>
@@ -562,7 +696,7 @@
       <div class="bcard">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></div>
         <h3>A Monday morning report</h3>
-        <p>New watchers, hot shoppers, texts sent, and which sold cars had someone watching — emailed to you every week. Manage a group? One rollup covers every rooftop.</p>
+        <p>New shopper leads for the week and the month to date, hot shoppers, texts sent, and which sold cars had someone watching — emailed to you every week. Manage a group? One rollup covers every rooftop.</p>
       </div>
       <div class="bcard">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><path d="M3 21h18"/></svg></div>
@@ -695,6 +829,150 @@
 
 
 <!-- Shopper angle -->
+<section id="dashboard">
+  <div class="wrap">
+    <div class="sec-eyebrow">One dashboard</div>
+    <h2 class="sec-title">Everything lands in your LotPulse dashboard.</h2>
+    <p class="sec-sub">One login opens on an overview of your offer leads and your watchers: leads for the last 7 days and month to date, what sold with a LotPulse touch, and what needs your attention. The same numbers arrive by email every Monday. In the dashboard, the "Watch this car" texts are called VinWatch.</p>
+
+    <div class="db-grid">
+      <figure class="db-panel db-wide">
+        <div class="db-chrome" aria-hidden="true"><span class="db-lp"><i></i>LotPulse<sup>TM</sup></span><span class="db-store">YOUR DEALERSHIP</span></div>
+        <div class="db-body" role="img" aria-label="Sample dashboard overview. Sold with a LotPulse touch in the last 30 days: 21 of 64 sold. Needs attention: 2 hot shoppers, 1 A-grade VinPop lead, 3 pricing signals. VinPop: 3 leads in the last 7 days, 11 month to date, 12.5 percent claim rate, 11 of 11 sent to CRM. VinWatch: 6 leads in the last 7 days, 14 month to date, 38 active watchers, 41 texts sent, 64 sold in the last 30 days.">
+          <div aria-hidden="true">
+            <div class="db-nav"><span class="on">Overview</span><span class="vp">VinPop</span><span class="vw">VinWatch</span></div>
+            <div class="db-top">
+              <div class="db-hero">
+                <div class="hl">Sold with a LotPulse touch · last 30 days</div>
+                <div><b>21</b><span class="of">of 64 sold</span></div>
+                <div class="hb"><span class="b-vp">6 with a VinPop lead</span><span class="b-vw">17 with watchers</span></div>
+              </div>
+              <div class="db-att">
+                <div class="db-h">Needs attention</div>
+                <div class="att red"><span><b>2 hot shoppers</b> watching 3+ cars or clicking alerts</span><em>Review ›</em></div>
+                <div class="att blue"><span><b>1 A-grade VinPop lead</b> in the last 7 days</span><em>Open ›</em></div>
+                <div class="att sky"><span><b>3 pricing signals</b> on your inventory</span><em>See signals ›</em></div>
+                <div class="att quiet"><span>CRM delivery: all 11 VinPop leads this month delivered</span><em>All clear</em></div>
+              </div>
+            </div>
+            <div class="db-band vp">
+              <div class="bh"><span><b>VinPop</b> Website offer leads</span><em>Open VinPop ›</em></div>
+              <div class="bt four">
+                <div><span>Leads · last 7 days</span><b class="c-vp">3</b><small>View leads ›</small></div>
+                <div><span>Leads · month to date</span><b class="c-vp">11</b><small>View leads ›</small></div>
+                <div><span>Claim rate · last 7 days</span><b>12.5%</b><small>24 popup views · By offer ›</small></div>
+                <div><span>Sent to CRM · month to date</span><b>11 <i>of 11</i></b><small class="good">0 undelivered</small></div>
+              </div>
+            </div>
+            <div class="db-band vw">
+              <div class="bh"><span><b>VinWatch</b> Shoppers watching vehicles by text</span><em>Open VinWatch ›</em></div>
+              <div class="bt five">
+                <div><span>Leads · last 7 days</span><b class="c-vw">6</b><small>New unique shoppers ›</small></div>
+                <div><span>Leads · month to date</span><b class="c-vw">14</b><small>New unique shoppers ›</small></div>
+                <div><span>Active watchers</span><b>38</b><small class="blue">9 new in last 7 days</small></div>
+                <div><span>Texts sent · last 7 days</span><b>41</b><small>See texts ›</small></div>
+                <div><span>Sold · last 30 days</span><b>64</b><small class="good">17 with watchers</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Overview.</b> Both products on one screen. Every number opens the list behind it: the leads, the shoppers, the texts, the sold cars. "Sold with a LotPulse touch" counts sold vehicles that had a watcher or a VinPop lead on them.</figcaption>
+      </figure>
+
+      <figure class="db-panel">
+        <div class="db-body" role="img" aria-label="Sample VinPop leads for the month to date: 11 leads, 8 from the timed popup and 3 from exit intent. Jordan Miller, graded A, claimed a 500 dollar Fall Event offer on a 2026 RAM 1500, sent to CRM, voucher code LP-8K2Q7M">
+          <div aria-hidden="true">
+            <div class="db-h">VinPop leads</div>
+            <div class="db-seg"><span>Last 7 days</span><span class="on">Month to date</span><span>Last 90 days</span></div>
+            <div class="db-tiles"><div><b class="c-vp">11</b><span>Leads this month</span></div><div><b>8</b><span>Timed popup</span></div><div><b>3</b><span>Exit intent</span></div></div>
+            <div class="db-lead">
+              <div class="db-lt"><b><span class="gr a">A</span>Jordan Miller</b><span>Tue at 6:42 PM</span></div>
+              <div class="db-pills"><span class="pl b">$500 · FALL EVENT</span><span class="pl">TIMED</span><span class="pl g">SENT TO CRM</span></div>
+              <div class="db-small">2026 RAM 1500 Laramie · Voucher code <code>LP-8K2Q7M</code></div>
+              <div class="db-links">(555) 010-4821 &nbsp; jordan@example.com</div>
+            </div>
+            <div class="db-lead" style="margin-top:8px">
+              <div class="db-lt"><b><span class="gr c">C</span>Casey Brooks</b><span>Mon at 11:05 AM</span></div>
+              <div class="db-pills"><span class="pl b">$1,000 · TACOMA EVENT</span><span class="pl">EXIT INTENT</span><span class="pl g">SENT TO CRM</span></div>
+              <div class="db-small">2025 Toyota Tacoma SR5 · Voucher code <code>LP-8J4T2C</code></div>
+              <div class="db-links">(555) 010-7390 &nbsp; casey@example.com</div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>VinPop leads.</b> Each claim with the offer, the car, the voucher code and whether it reached your CRM, graded A to D by how engaged the shopper was on your site.</figcaption>
+      </figure>
+
+      <figure class="db-panel">
+        <div class="db-body" role="img" aria-label="Sample VinWatch demand board showing the vehicles shoppers are watching: a 2025 Toyota Tacoma SR5 with 5 watchers, a 2026 RAM 1500 Laramie with 3, a 2024 Honda Accord Sport with 2, and two more with 1 each">
+          <div aria-hidden="true">
+            <div class="db-h">Demand board <span class="db-tag t-teal">VinWatch</span><span class="db-meta">5 of 142 vehicles · with watchers</span></div>
+            <div class="db-board">
+              <div class="db-row"><span class="db-thumb"></span><span class="db-veh">2025 Toyota Tacoma SR5<small>USED</small></span><span class="db-price">$36,480</span><span class="db-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="db-n">5</span></div>
+              <div class="db-row"><span class="db-thumb"></span><span class="db-veh">2026 RAM 1500 Laramie<small>NEW</small></span><span class="db-price">$58,915</span><span class="db-bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><span class="db-n">3</span></div>
+              <div class="db-row"><span class="db-thumb"></span><span class="db-veh">2024 Honda Accord Sport<small>USED</small></span><span class="db-price">$27,940</span><span class="db-bar"><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="db-n">2</span></div>
+              <div class="db-row"><span class="db-thumb"></span><span class="db-veh">2023 Ford F-150 XLT<small>USED</small></span><span class="db-price">$41,275</span><span class="db-bar"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="db-n">1</span></div>
+              <div class="db-row"><span class="db-thumb"></span><span class="db-veh">2026 Kia Sportage EX<small>NEW</small></span><span class="db-price">$33,610</span><span class="db-bar"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="db-n">1</span></div>
+            </div>
+            <div class="db-more">Show all 142 vehicles</div>
+          </div>
+        </div>
+        <figcaption><b>Demand board.</b> The cars real shoppers are watching, ranked by watchers. One tap shows the whole lot, including aging units nobody is watching.</figcaption>
+      </figure>
+
+      <figure class="db-panel">
+        <div class="db-body" role="img" aria-label="Sample Live now view: 6 on site, 2 engaged, 1 known by name, one car being viewed, and two visitor rows">
+          <div aria-hidden="true">
+            <div class="db-h"><span class="dot"></span>Live now · <span style="font-weight:600;color:var(--body)">updated 6s ago</span></div>
+            <div class="db-tiles four"><div><b>6</b><span>On site now</span></div><div><b class="c-red">2</b><span>Engaged</span></div><div><b class="c-blue">1</b><span>Known by name</span></div><div><b class="c-green">4</b><span>Qualified</span></div></div>
+            <div class="db-chip">2026 RAM 1500 Laramie · 2</div>
+            <div class="db-vis"><b>Taylor R.</b><span class="pl t">Watcher</span><div class="db-meter"><i style="width:72%;background:#dc2626"></i></div><span class="db-small">Engaged · 4 vehicles · 6 min · returning</span></div>
+            <div class="db-vis"><b class="m">Visitor #2817</b><div class="db-meter"><i style="width:34%;background:#e9a23b"></i></div><span class="db-small">Warming · 2 vehicles · 3 min</span></div>
+          </div>
+        </div>
+        <figcaption><b>Live now.</b> Who's on your site, the car they're viewing and how engaged they are. Anonymous unless they've watched a car or claimed an offer with you.</figcaption>
+      </figure>
+
+      <figure class="db-panel">
+        <div class="db-body" role="img" aria-label="Sample Who sees VinPop settings: engaged shoppers only, showing after 2 vehicles, 2 minutes on site or a return visit">
+          <div aria-hidden="true">
+            <div class="db-h">Who sees VinPop</div>
+            <div class="db-seg"><span>Everyone</span><span class="on">Engaged shoppers only</span></div>
+            <div class="db-rule"><i class="tg on"></i><span>Vehicles viewed</span><b>2</b></div>
+            <div class="db-rule"><i class="tg on"></i><span>Active time on site</span><b>2 min</b></div>
+            <div class="db-rule"><i class="tg on"></i><span>Returning visitor</span></div>
+            <div class="db-rule"><i class="tg"></i><span class="m">Scrolled the vehicle page</span><b class="m">60%</b></div>
+            <div class="db-sum">Shows after 2+ vehicles or 2+ min on site or a return visit.</div>
+          </div>
+        </div>
+        <figcaption><b>Who sees VinPop.</b> Show offers to everyone, or only to shoppers who've shown real interest. Your agency sets it per rooftop.</figcaption>
+      </figure>
+
+      <figure class="db-panel db-wide">
+        <div class="db-body solo" role="img" aria-label="Sample Monday report email. Sold with a LotPulse touch: 21 of 64 sold. VinPop: 3 leads in the last 7 days, 11 month to date, 12.5 percent claim rate, 11 of 11 sent to CRM. VinWatch: 6 leads in the last 7 days, 14 month to date, 38 active watchers, 41 texts sent.">
+          <div aria-hidden="true">
+            <div class="db-h">Your Monday report <span class="db-meta">Your Dealership — your LotPulse week (6 VinWatch leads · 3 VinPop leads)</span></div>
+            <div class="db-mail">
+              <div class="db-hero slim">
+                <div class="hl">Sold with a LotPulse touch · last 30 days</div>
+                <div><b>21</b><span class="of">of 64 sold</span></div>
+                <div class="hb"><span class="b-vp">6 with a VinPop lead</span><span class="b-vw">17 with watchers</span></div>
+              </div>
+              <div class="db-mcol">
+                <div class="db-rep b">VinPop</div>
+                <div class="db-tiles four"><div><b class="c-vp">3</b><span>Leads · 7 days</span></div><div><b class="c-vp">11</b><span>Leads · month to date</span></div><div><b>12.5%</b><span>Claim rate</span></div><div><b>11 of 11</b><span>Sent to CRM</span></div></div>
+                <div class="db-rep t">VinWatch</div>
+                <div class="db-tiles four"><div><b class="c-vw">6</b><span>Leads · 7 days</span></div><div><b class="c-vw">14</b><span>Leads · month to date</span></div><div><b>38</b><span>Active watchers</span></div><div><b>41</b><span>Texts sent</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Monday report.</b> The same numbers as your dashboard, emailed every week, with the week's offer leads and most watched vehicles underneath. Manage a group? One rollup covers every rooftop.</figcaption>
+      </figure>
+    </div>
+    <p class="db-note">Illustrations with sample data. Names, numbers and vehicles are made up.</p>
+  </div>
+</section>
+
 <section class="shopper">
   <div class="wrap shopper-grid">
     <div>
