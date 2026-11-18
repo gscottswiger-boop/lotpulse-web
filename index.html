@@ -1113,7 +1113,7 @@
   // ── Booking link: paste your scheduler URL here (Calendly, Cal.com, etc.) ──
   // If left blank, the buttons fall back to an email.
   var BOOKING_URL = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1oxBYPRA-C0pK6UeYf6NoVkBrMmpQLqhlsX4L1orPtAR9FTLStsTAhken_7xgZrzn4wtk-Oacz";
-  var BOOKING_EMAIL = "scott@lotpulse.io";
+  var BOOKING_EMAIL = "support@lotpulse.io";
 
   (function(){
     var target = BOOKING_URL || ("mailto:" + BOOKING_EMAIL + "?subject=LotPulse%20Demo%20Request&body=I%27d%20like%20to%20see%20LotPulse%20on%20my%20inventory.");
@@ -1314,7 +1314,7 @@
         btn.disabled = false; btn.textContent = "Start my 30 days free";
       }
     }).catch(function(){
-      err.textContent = "Couldn't reach us just now \u2014 please email scott@lotpulse.io.";
+      err.textContent = "Couldn't reach us just now \u2014 please email support@lotpulse.io.";
       err.style.display = "block";
       btn.disabled = false; btn.textContent = "Start my 30 days free";
     });
